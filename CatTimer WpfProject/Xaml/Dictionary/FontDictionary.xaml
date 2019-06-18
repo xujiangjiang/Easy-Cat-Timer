@@ -1,0 +1,20 @@
+﻿<!--字体-->
+<!--这次的字体比较特殊，都是絮酱酱自己手写的-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CatTimer_WpfProject">
+    
+    <!--字体：数字-->
+    <FontFamily x:Key="MaybeCuteFontFamily">/CatTimer WpfProject;component/Asset/Font/#Maybe Cute Font</FontFamily>
+
+    <!--字体：数字(间距加宽)-->
+    <FontFamily x:Key="MaybeCuteFontFamily.IncreaseSpacing">/CatTimer WpfProject;component/Asset/Font/#Maybe Cute Font Increase Spacing</FontFamily>
+
+
+    <!--设置界面的文字-->
+    <ImageBrush x:Key="Setting.Chinese.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Chinese.png"></ImageBrush>
+    <ImageBrush x:Key="Setting.English.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/English/English.png"></ImageBrush>
+
+</ResourceDictionary>

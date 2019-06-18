@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="CatTimer_WpfProject.ToggleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatTimer_WpfProject"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="ToggleUserControl">
+
+    <!--资源-->
+    <UserControl.Resources>
+
+
+        <!--动画-->
+        <!--当鼠标在[按钮]上按下的动画-->
+        <Storyboard x:Key="Button_OnMouseDown_Storyboard">
+            <DoubleAnimation From="1" To="0.85" Duration="0:0:0.1"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" 
+                             Storyboard.TargetName="BaseCheckBox">
+            </DoubleAnimation>
+            <DoubleAnimation From="1" To="0.75" Duration="0:0:0.1"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" 
+                             Storyboard.TargetName="BaseCheckBox">
+            </DoubleAnimation>
+        </Storyboard>
+        <!--当鼠标在[按钮]上抬起的动画-->
+        <Storyboard x:Key="Button_OnMouseUp_Storyboard">
+            <DoubleAnimation From="0.85" To="1" Duration="0:0:0.1"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" 
+                             Storyboard.TargetName="BaseCheckBox">
+            </DoubleAnimation>
+            <DoubleAnimation From="0.75" To="1" Duration="0:0:0.1"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" 
+                             Storyboard.TargetName="BaseCheckBox">
+            </DoubleAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+
+
+
+
+    <Grid>
+        <CheckBox Name="BaseCheckBox"
+                  Style="{StaticResource ToggleStyle}"
+                  IsChecked="{Binding ElementName=ToggleUserControl,Path=IsChecked}"
+                  RenderTransformOrigin="0.5,0.5"
+                  PreviewMouseDown="CheckBox_OnPreviewMouseDown"
+                  PreviewMouseUp="CheckBox_OnPreviewMouseUp"
+                  Checked="CheckBox_OnChecked"
+                  Unchecked="CheckBox_OnUnchecked">
+
+            <Border Width="{Binding ElementName=ToggleUserControl,Path=IconWidth}" 
+                    Height="{Binding ElementName=ToggleUserControl,Path=IconHeight}" 
+                    Margin="{Binding ElementName=ToggleUserControl,Path=Padding}"
+                    Background="{Binding ElementName=ToggleUserControl,Path=Icon}"></Border>
+
+
+
+            <!--变换-->
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform></ScaleTransform>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+    </Grid>
+
+</UserControl>

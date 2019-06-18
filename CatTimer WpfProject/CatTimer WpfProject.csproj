@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D0384D0-EF18-4EE8-9441-2EC9C5697973}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CatTimer_WpfProject</RootNamespace>
+    <AssemblyName>CatTimer WpfProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Asset\Icon\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppManager.cs" />
+    <Compile Include="Code\Data\AppDatas.cs" />
+    <Compile Include="Code\Data\SettingData.cs" />
+    <Compile Include="Code\Data\StateData.cs" />
+    <Compile Include="Code\Data\TimeData.cs" />
+    <Compile Include="Code\Notification\NotificationSystem.cs" />
+    <Compile Include="Code\Other\Enums.cs" />
+    <Compile Include="Code\Other\Tools.cs" />
+    <Compile Include="Code\Struct\DayTime.cs" />
+    <Compile Include="Code\System\AppSystems.cs" />
+    <Compile Include="Code\System\AudioSystem.cs" />
+    <Compile Include="Code\System\LanguageSystem.cs" />
+    <Compile Include="Code\System\SaveSystem.cs" />
+    <Compile Include="Code\System\TaskbarSystem.cs" />
+    <Compile Include="Code\System\TimeSystem.cs" />
+    <Compile Include="Code\Timer\Timer.cs" />
+    <Compile Include="Code\Timer\TimeTask.cs" />
+    <Compile Include="Xaml\Control\BlackCatControl.xaml.cs">
+      <DependentUpon>BlackCatControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\ButtonControl.xaml.cs">
+      <DependentUpon>ButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\CheckBoxControl.xaml.cs">
+      <DependentUpon>CheckBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\ClockControl.xaml.cs">
+      <DependentUpon>ClockControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\PausedUiControl.xaml.cs">
+      <DependentUpon>PausedUiControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\SettingUiControl.xaml.cs">
+      <DependentUpon>SettingUiControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\TimingControl.xaml.cs">
+      <DependentUpon>TimingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\ToggleControl.xaml.cs">
+      <DependentUpon>ToggleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\Control\YellowCatControl.xaml.cs">
+      <DependentUpon>YellowCatControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Notification\NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Xaml\Control\BlackCatControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\CheckBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\ClockControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\PausedUiControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\SettingUiControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\TimingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\ToggleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\YellowCatControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Dictionary\ConverterDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Dictionary\EnglishTextDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Style\CheckBoxDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Style\NoBackgroundButtonDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Style\ToggleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Control\ButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Dictionary\ChineseTextDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Dictionary\FontDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\Dictionary\ImageDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Xaml\Style\ButtonDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Code\Notification\NotificationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Resource Include="Asset\Font\MaybeCuteFont-Number.otf" />
+    <Resource Include="Asset\Font\MaybeCuteFont-IncreaseSpacing.otf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Cat\YellowCat-OpenMouth.png" />
+    <Resource Include="Asset\Image\Cat\YellowCat-Hand.png" />
+    <Resource Include="Asset\Image\Cat\YellowCat-Body.png" />
+    <Resource Include="Asset\Image\Cat\YellowCat-CloseMouth.png" />
+    <Resource Include="Asset\Image\Cat\BlackCat-OpenMouth.png" />
+    <Resource Include="Asset\Image\Cat\BlackCat-Body.png" />
+    <Resource Include="Asset\Image\Cat\BlackCat-CloseMouth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\Close.png" />
+    <Resource Include="Asset\Image\Icon\Minimum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Cat\YellowCat-Rope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Cat\BlackCat-Rope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\Reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\Resume.png" />
+    <Resource Include="Asset\Image\Text\Chinese\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\WhiteArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\Github.png" />
+    <Resource Include="Asset\Image\Icon\AppInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Other\Version.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Other\WavePoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Other\DivideLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\Chinese.png" />
+    <Resource Include="Asset\Image\Text\Chinese\SettingTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\PullDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\CheckBox-Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\CheckBox-Foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\Paused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\Paused.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\Reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\Resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\English.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\Minute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\SettingTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\Minute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\StartLine.png" />
+    <Resource Include="Asset\Image\Text\Chinese\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\StartLine.png" />
+    <Resource Include="Asset\Image\Text\English\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Icon\UpDownButton-Up.png" />
+    <Resource Include="Asset\Image\Icon\UpDownButton-Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\Chinese\Notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Text\English\Notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset\Image\Cat\NotificationCat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asset\Audio\Complete.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Audio\DefaultButtonUp.wav" />
+    <Content Include="Asset\Audio\DefaultButtonDown.wav" />
+    <Content Include="Asset\Audio\CatUp-01.wav" />
+    <Content Include="Asset\Audio\CatUp-02.wav" />
+    <Content Include="Asset\Audio\CatUp-03.wav" />
+    <Content Include="Asset\Audio\CatDown-01.wav" />
+    <Content Include="Asset\Audio\CatDown-02.wav" />
+    <Content Include="Asset\Audio\CatDown-03.wav" />
+    <Resource Include="Asset\Image\Other\Staff.png" />
+    <Resource Include="Asset\Icon\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

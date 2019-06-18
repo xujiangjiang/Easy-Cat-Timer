@@ -1,0 +1,32 @@
+﻿<!--已暂停界面 的控件-->
+<UserControl x:Class="CatTimer_WpfProject.PausedUiControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatTimer_WpfProject"
+             mc:Ignorable="d" 
+             d:DesignHeight="344" d:DesignWidth="394"
+             Name="PausedUiUserControl">
+
+    <Grid>
+        <Border Background="#FF898989">
+
+            <Grid>
+                <Border Background="{DynamicResource Timer.Paused.ImageBrush}"
+                        Width="311" Height="101"
+                        Margin="-5,-170,0,0"></Border>
+
+
+                <Viewbox Width="110" Height="100" Margin="195,35,0,0">
+                    <TextBlock Name="ColckTextBlock"
+                               Text="{Binding ElementName=PausedUiUserControl,Path=Clock.TimeToHourString}"
+                               Foreground="#FF656565"
+                               FontFamily="{StaticResource MaybeCuteFontFamily}"/>
+                </Viewbox>
+
+            </Grid>
+
+        </Border>
+    </Grid>
+</UserControl>

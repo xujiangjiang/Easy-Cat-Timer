@@ -1,0 +1,127 @@
+﻿<Window x:Class="CatTimer_WpfProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatTimer_WpfProject"
+        mc:Ignorable="d"
+        Title="Cat Timer v0.0.1" Width="434" Height="384" ResizeMode="NoResize"
+        
+        AllowsTransparency="True" WindowStyle="None" Background="Transparent"
+        
+        Loaded="MainWindow_OnLoaded">
+
+
+    <!--任务栏的相关控件-->
+    <Window.TaskbarItemInfo>
+        <!--在窗口中，创建一个任务栏进度条-->
+        <TaskbarItemInfo x:Name="taskbarItemInfo"></TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
+
+
+
+
+
+
+    <Grid Width="394" Height="344">
+
+        <!--窗口背景-->
+        <Border Background="White" CornerRadius="25" Opacity="1">
+            <Border.Effect>
+                <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="20" 
+                                  Opacity="0.25" Color="#FF5B5B5B"></DropShadowEffect>
+            </Border.Effect>
+        </Border>
+
+
+
+        <!--所有的内容-->
+        <!--圆角Border遮罩：不要给border 设置圆角，你应该裁剪border，这样他里面的内容才不会溢出-->
+        <Border Background="Transparent">
+
+            <!--剪裁-->
+            <Border.Clip>
+                <RectangleGeometry RadiusX="20" RadiusY="20" Rect="0,0,394,344"/>
+            </Border.Clip>
+
+
+            <!--所有的内容-->
+            <Grid>
+
+                <!--时钟（Clock）-->
+                <local:ClockControl x:Name="ClockUserControl" Margin="15,0,17,0"
+                                    Time="{Binding TimeData.CurrentTime}"></local:ClockControl>
+
+
+                <!--暂停面板-->
+                <local:PausedUiControl x:Name="PausedUiUserControl" 
+                                       Visibility="Hidden" Clock="{Binding TimeData.CurrentTime}"></local:PausedUiControl>
+
+
+                <!--猫咪-->
+                <local:BlackCatControl x:Name="BlackCatUserControl"></local:BlackCatControl>
+                <local:YellowCatControl x:Name="YellowCatUserControl"></local:YellowCatControl>
+
+
+                <!--定时界面-->
+                <local:TimingControl x:Name="TimingUserControl" Visibility="Visible"></local:TimingControl>
+
+
+                <!--设置界面-->
+                <local:SettingUiControl x:Name="SettingUiUserControl"
+                                        Margin="2,-5,0,0"
+                                        Visibility="{Binding ElementName=SettingToggleControl,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        Language="{Binding SettingData.Language}"
+                                        IsHaveVoice="{Binding SettingData.IsHaveVoice}"/>
+
+
+                <!--窗口的标题栏（用于拖动窗口)-->
+                <Border Name="WindowTitleBorder"
+                        Margin="0,0,0,304" Background="Transparent"
+                        MouseLeftButtonDown="WindowTitleBorder_MouseLeftButtonDown">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                                Margin="0,0,17,0">
+
+                        <!--按钮：设置-->
+                        <local:ToggleControl x:Name="SettingToggleControl"
+                                             Width="52" Height="24" Margin="1"
+                                             Icon="{StaticResource Icon.Setting.ImageBrush}"
+                                             IconWidth="41" IconHeight="21"
+                                             Padding="0,0,0,-5"/>
+
+                        <!--按钮：最小化-->
+                        <local:ButtonControl x:Name="MinimumWindowButtonControl"
+                                             ButtonStyle="{StaticResource ButtonStyle}"
+                                             Width="24" Height="24" Margin="1"
+                                             Icon="{StaticResource Icon.Minimum.ImageBrush}"
+                                             IconWidth="17" IconHeight="6"
+                                             Click="MinimumWindowButtonControl_OnClick"/>
+
+
+                        <!--按钮：关闭-->
+                        <local:ButtonControl x:Name="CloseWindowButtonControl"
+                                             ButtonStyle="{StaticResource ButtonStyle}"
+                                             Width="24" Height="24" Margin="1"
+                                             Icon="{StaticResource Icon.Close.ImageBrush}"
+                                             IconWidth="16" IconHeight="18"
+                                             Click="CloseWindowButton_Click"/>
+
+                    </StackPanel>
+                </Border>
+
+
+                <Canvas>
+                    <!--制作者名单-->
+                    <Border Name="StaffBorder" Opacity="0" IsHitTestVisible="False"
+                            Background="{StaticResource Other.Staff.ImageBrush}"
+                            Width="168" Height="234" Canvas.Left="163" Canvas.Top="10"></Border>
+                </Canvas>
+
+            </Grid>
+
+        </Border>
+
+
+    </Grid>
+</Window>

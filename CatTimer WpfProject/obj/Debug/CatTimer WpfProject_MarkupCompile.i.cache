@@ -1,0 +1,20 @@
+﻿CatTimer WpfProject
+
+
+winexe
+C#
+.cs
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\obj\Debug\
+CatTimer_WpfProject
+none
+false
+DEBUG;TRACE
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\App.xaml
+20-1575818475
+9170544763
+33771139051
+151984215308
+Xaml\Control\BlackCatControl.xaml;Xaml\Control\CheckBoxControl.xaml;Xaml\Control\ClockControl.xaml;Xaml\Control\PausedUiControl.xaml;Xaml\Control\SettingUiControl.xaml;Xaml\Control\TimingControl.xaml;Xaml\Control\ToggleControl.xaml;Xaml\Control\YellowCatControl.xaml;Xaml\Dictionary\ConverterDictionary.xaml;Xaml\Dictionary\EnglishTextDictionary.xaml;Xaml\Style\CheckBoxDictionary.xaml;Xaml\Style\NoBackgroundButtonDictionary.xaml;Xaml\Style\ToggleDictionary.xaml;Xaml\Control\ButtonControl.xaml;Xaml\Dictionary\ChineseTextDictionary.xaml;Xaml\Dictionary\FontDictionary.xaml;Xaml\Dictionary\ImageDictionary.xaml;MainWindow.xaml;Xaml\Style\ButtonDictionary.xaml;Code\Notification\NotificationWindow.xaml;
+
+False
+

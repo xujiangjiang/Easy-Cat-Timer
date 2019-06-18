@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CatTimer_WpfProject">
+
+    <!--图标-->
+    <ImageBrush x:Key="Icon.Setting.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/Setting.png"></ImageBrush>
+    <ImageBrush x:Key="Icon.Minimum.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/Minimum.png"></ImageBrush>
+    <ImageBrush x:Key="Icon.Close.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/Close.png"></ImageBrush>
+    <ImageBrush x:Key="Icon.WhiteArrow.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/WhiteArrow.png"></ImageBrush>
+    <ImageBrush x:Key="Icon.Logo.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/Logo.png"></ImageBrush>
+    <ImageBrush x:Key="Icon.Github.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/Github.png"></ImageBrush>
+    <ImageBrush x:Key="Icon.AppInfo.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/AppInfo.png"></ImageBrush>
+    <ImageBrush x:Key="UpDownButton.Up.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/UpDownButton-Up.png"></ImageBrush>
+    <ImageBrush x:Key="UpDownButton.Down.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/UpDownButton-Down.png"></ImageBrush>
+    <ImageBrush x:Key="CheckBox.Background.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/CheckBox-Background.png"></ImageBrush>
+    <ImageBrush x:Key="CheckBox.Foreground.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/CheckBox-Foreground.png"></ImageBrush>
+    <ImageBrush x:Key="PullDownBox.PullDown.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Icon/PullDown.png"></ImageBrush>
+
+
+
+    <!--黄色猫咪-->
+    <ImageBrush x:Key="YellowCat.Body.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/YellowCat-Body.png"></ImageBrush>
+    <ImageBrush x:Key="YellowCat.OpenMouth.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/YellowCat-OpenMouth.png"></ImageBrush>
+    <ImageBrush x:Key="YellowCat.CloseMouth.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/YellowCat-CloseMouth.png"></ImageBrush>
+    <ImageBrush x:Key="YellowCat.Hand.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/YellowCat-Hand.png"></ImageBrush>
+    <ImageBrush x:Key="YellowCat.Rope.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/YellowCat-Rope.png"></ImageBrush>
+
+
+
+    <!--黑色猫咪-->
+    <ImageBrush x:Key="BlackCat.Body.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/BlackCat-Body.png"></ImageBrush>
+    <ImageBrush x:Key="BlackCat.OpenMouth.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/BlackCat-OpenMouth.png"></ImageBrush>
+    <ImageBrush x:Key="BlackCat.CloseMouth.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/BlackCat-CloseMouth.png"></ImageBrush>
+    <ImageBrush x:Key="BlackCat.Rope.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/BlackCat-Rope.png"></ImageBrush>
+
+
+
+
+    <!--其他-->
+    <ImageBrush x:Key="Other.WavePoint.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Other/WavePoint.png"></ImageBrush>
+    <ImageBrush x:Key="Other.Version.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Other/Version.png"></ImageBrush>
+    <ImageBrush x:Key="Other.DivideLine.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Other/DivideLine.png"></ImageBrush>
+    <ImageBrush x:Key="Other.Staff.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Other/Staff.png"></ImageBrush>
+
+
+
+
+    <!--通知-->
+    <ImageBrush x:Key="Notification.Cat.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Cat/NotificationCat.png"></ImageBrush>
+
+</ResourceDictionary>

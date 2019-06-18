@@ -1,0 +1,38 @@
+﻿<!--中文的文字-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CatTimer_WpfProject">
+
+    <!--绳子的按钮 的文字-->
+    <ImageBrush x:Key="RopeButton.Pause.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Pause.png"></ImageBrush>
+    <ImageBrush x:Key="RopeButton.Resume.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Resume.png"></ImageBrush>
+    <ImageBrush x:Key="RopeButton.Reset.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Reset.png"></ImageBrush>
+
+
+    <!--设置界面 的文字-->
+    <ImageBrush x:Key="Setting.Title.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/SettingTitle.png"></ImageBrush>
+    <ImageBrush x:Key="Setting.Minute.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Minute.png"></ImageBrush>
+
+
+    <!--计时界面 的文字-->
+    <ImageBrush x:Key="Timer.Paused.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Paused.png"></ImageBrush>
+    
+
+    <!--定时界面 的文字-->
+    <ImageBrush x:Key="Timing.Start.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Start.png"></ImageBrush>
+    <ImageBrush x:Key="Timing.StartLine.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/StartLine.png"></ImageBrush>
+
+
+    <!--通知界面 的文字-->
+    <ImageBrush x:Key="Notification.Text.ImageBrush"
+                ImageSource="/CatTimer WpfProject;component/Asset/Image/Text/Chinese/Notification.png"></ImageBrush>
+
+</ResourceDictionary>

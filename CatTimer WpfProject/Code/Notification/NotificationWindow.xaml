@@ -1,0 +1,53 @@
+﻿<!--屏幕右下角的通知窗口-->
+<Window x:Class="CatTimer_WpfProject.NotificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatTimer_WpfProject"
+        mc:Ignorable="d"
+
+        Title="NotificationWindow" 
+        Height="141" Width="490"
+        ResizeMode="NoResize" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent"
+        
+        Loaded="NotificationWindow_OnLoaded"
+        Topmost="True">
+
+    <Grid>
+
+        <Canvas>
+            <Grid Name="NotificationGrid" Width="490" Height="141">
+                
+                <!--窗口背景-->
+                <Border Background="White" CornerRadius="10" Opacity="1" Width="460" Height="100" Margin="0,14,0,0">
+                    <Border.Effect>
+                        <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="20" 
+                                  Opacity="0.25" Color="#FF5B5B5B"></DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+
+                <Canvas>
+                    <!--通知：猫咪-->
+                    <Border Background="{StaticResource Notification.Cat.ImageBrush}"
+                            Width="160" Height="128" Canvas.Left="15"/>
+
+                    <!--通知：文字-->
+                    <Border Background="{DynamicResource Notification.Text.ImageBrush}"
+                            Width="221" Height="64" Canvas.Left="200" Canvas.Top="51"></Border>
+
+                    <!--按钮：关闭-->
+                    <local:ButtonControl ButtonStyle="{StaticResource ButtonStyle}"
+                                         Width="24" Height="24"
+                                         Canvas.Left="434" Canvas.Top="33"
+                                         Icon="{StaticResource Icon.Close.ImageBrush}"
+                                         IconWidth="16" IconHeight="18"
+                                         Click="CloseButton_OnClick"/>
+                </Canvas>
+            </Grid>
+
+        </Canvas>
+    </Grid>
+
+</Window>

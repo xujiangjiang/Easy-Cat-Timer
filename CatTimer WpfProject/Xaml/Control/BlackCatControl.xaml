@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="CatTimer_WpfProject.BlackCatControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatTimer_WpfProject"
+             mc:Ignorable="d" 
+             d:DesignHeight="344" d:DesignWidth="394">
+
+    <!--资源-->
+    <UserControl.Resources>
+        <!--当鼠标进入猫咪身体的时候，触发的动画-->
+        <Storyboard x:Key="CatGrid.OnMouseEnter">
+            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="CatGrid"
+                             To="134" Duration="0:0:0.25">
+                <DoubleAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut" ></QuarticEase>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="RopeGrid"
+                             To="-19" Duration="0:0:0.35">
+                <DoubleAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut" ></QuarticEase>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CatButtonControl">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <!--当鼠标离开猫咪身体的时候，触发的动画-->
+        <Storyboard x:Key="CatGrid.OnMouseLeave">
+            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="CatGrid"
+                             To="250" Duration="0:0:0.25">
+                <DoubleAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseIn" ></QuarticEase>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="RopeGrid"
+                             To="-320" Duration="0:0:0.35">
+                <DoubleAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut" ></QuarticEase>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CatButtonControl">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.25" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+        <!--绳子自由摆动的动画-->
+        <Storyboard x:Key="RopeGrid.Storyboard">
+            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="RopeGrid"
+                             From="289" To="302" Duration="0:0:2" AutoReverse="True" RepeatBehavior="Forever">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseInOut"></SineEase>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+
+        <!--当鼠标在按钮上点击的时候，触发的动画-->
+        <Storyboard x:Key="CatButtonControl.OnMouseDown">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PressCatButtonGrid">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <!--当鼠标在按钮上抬起的时候，触发的动画-->
+        <Storyboard x:Key="CatButtonControl.OnMouseUp">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PressCatButtonGrid">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+
+
+    <!--触发器-->
+    <UserControl.Triggers>
+        <!--猫咪身体-->
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="CatGrid">
+            <BeginStoryboard Storyboard="{StaticResource CatGrid.OnMouseEnter}"/>
+            <BeginStoryboard Name="BeginRopeGridStoryboard" Storyboard="{StaticResource RopeGrid.Storyboard}"></BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="CatGrid">
+            <StopStoryboard BeginStoryboardName="BeginRopeGridStoryboard"></StopStoryboard>
+            <BeginStoryboard Storyboard="{StaticResource CatGrid.OnMouseLeave}"/>
+        </EventTrigger>
+
+        <!--按钮-->
+        <EventTrigger RoutedEvent="UIElement.PreviewMouseDown" SourceName="CatButtonControl">
+            <PauseStoryboard BeginStoryboardName="BeginRopeGridStoryboard"></PauseStoryboard>
+            <BeginStoryboard Storyboard="{StaticResource CatButtonControl.OnMouseDown}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.PreviewMouseUp" SourceName="CatButtonControl">
+            <ResumeStoryboard BeginStoryboardName="BeginRopeGridStoryboard"></ResumeStoryboard>
+            <BeginStoryboard Storyboard="{StaticResource CatButtonControl.OnMouseUp}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+
+
+    <!--外观-->
+    <Grid>
+        <Canvas>
+            <!--猫-->
+            <Grid Name="CatGrid"
+                  Width="233" Height="215" Canvas.Left="182" Canvas.Top="250"
+                  MouseEnter="CatGrid_OnMouseEnter"
+                  MouseLeave="CatGrid_OnMouseLeave">
+                <!--黑猫猫：身体-->
+                <Border Background="{StaticResource BlackCat.Body.ImageBrush}"></Border>
+
+                <!--黑猫猫：嘴巴-->
+                <local:ButtonControl x:Name="CatButtonControl"
+                                     ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
+                                     Width="96" Height="81" Margin="0,30,0,0"
+                                     Icon="{StaticResource BlackCat.OpenMouth.ImageBrush}"
+                                     IconWidth="96" IconHeight="81" Padding="-2"
+                                     Visibility="Collapsed"
+                                     Click="CatButtonControl_OnClick"></local:ButtonControl>
+            </Grid>
+
+            <!--绳子-->
+            <Grid Name="RopeGrid"
+                  Width="8" Height="257" Canvas.Left="297" Canvas.Top="-320"
+                  IsHitTestVisible="False">
+                <!--黑猫猫：绳子-->
+                <Border Background="{StaticResource BlackCat.Rope.ImageBrush}">
+                    <Border Width="71" Height="55"  Margin="-30,250,-33,-48"
+                            Background="{DynamicResource RopeButton.Reset.ImageBrush}">
+                    </Border>
+                </Border>
+            </Grid>
+
+
+            <!--按下按钮后，要显示的东西-->
+            <Grid Name="PressCatButtonGrid" Width="394" Height="344"
+                  IsHitTestVisible="False" Visibility="Collapsed">
+                <!--黑猫猫：闭上的嘴巴-->
+                <Border Width="96" Height="81"
+                        Margin="201,170,0,0"
+                        Background="{StaticResource BlackCat.CloseMouth.ImageBrush}"></Border>
+            </Grid>
+
+        </Canvas>
+
+    </Grid>
+</UserControl>
