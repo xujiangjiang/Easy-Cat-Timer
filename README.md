@@ -16,7 +16,7 @@ Easy Cat Timer是一个非常简单计时器（倒计时）软件。
 
 最新版本：  v0.0.1 (2019年06月20日)
 
-下载地址：[点击下载v0.0.1版本](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v0.0.1/CatTimer.v0.0.1.zip)
+下载地址：[点击下载v0.0.1版本](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v0.0.1/Easy.Cat.Timer.v0.0.1.zip)
 
 Steam地址：https://store.steampowered.com/app/1054580/Easy_Cat_Timer/
 
