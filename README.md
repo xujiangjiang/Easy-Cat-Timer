@@ -2,6 +2,8 @@
 
 Easy Cat Timer是一个非常简单计时器（倒计时）软件。
 
+*（We will add the English Description in the README.md file as soon as possible.）*
+
 ![主界面](ReadMeImage/MainWindow.png)
 
 <br/>
@@ -34,6 +36,7 @@ Easy Cat Timer是一个使用C#语言编写的WPF应用（.NET Framework），�
 
 - 非常简单（只有倒计时的功能）
 - 非常可爱
+- 有详细的中文注释
 
 <br/>
 
