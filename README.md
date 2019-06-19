@@ -12,7 +12,7 @@ Easy Cat Timer是一个非常简单计时器（倒计时）软件。
 
 2019年7月2日之后，你可以在Steam商店里，下载这款软件。
 
-
+<br/>
 
 最新版本：  v0.0.1 (2019年06月20日)
 
@@ -28,14 +28,14 @@ Steam地址：https://store.steampowered.com/app/1054580/Easy_Cat_Timer/
 
 Easy Cat Timer是一个使用C#语言编写的WPF应用（.NET Framework），可运行在Windows平台。
 
-
+<br/>
 
 **软件特色：**
 
 - 非常简单（只有倒计时的功能）
 - 非常可爱
 
-
+<br/>
 
 **在这个简单的项目中，大概有这些部分：**
 
@@ -64,7 +64,7 @@ Easy Cat Timer是一个使用C#语言编写的WPF应用（.NET Framework），�
 | Xaml        | 这个文件夹里，是项目中用到的所有.xaml文件。<br />包括了自定义控件、资源词典、以及样式。 |
 | ReadMeIamge | 这个文件夹里，装的是README.md文档中要用到的图片。<br />（直接删掉也没关系哒！~） |
 
-
+<br/>
 
 **重要文件说明：**
 
