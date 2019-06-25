@@ -88,6 +88,14 @@ namespace CatTimer_WpfProject
             switch (_audioType)
             {
                 case AudioType.Complete:
+                    if (completeSoundPlayer==null)
+                    {
+                        //[完成]的音效
+                        completeSoundPlayer = new MediaPlayer();
+                        completeSoundPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/Complete.wav", UriKind.Absolute));
+                        completeSoundPlayer.Volume = 1;
+                    }
+
                     completeSoundPlayer.Stop();
                     completeSoundPlayer.Play();
                     break;

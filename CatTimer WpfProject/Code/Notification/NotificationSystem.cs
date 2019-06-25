@@ -25,6 +25,10 @@ namespace CatTimer_WpfProject
 
 
 
+
+
+
+        #region 公开方法
         /// <summary>
         /// 显示一个通知窗口
         /// （显示一条通知）
@@ -49,6 +53,28 @@ namespace CatTimer_WpfProject
         }
 
 
+        /// <summary>
+        /// 关闭所有的通知窗口
+        /// </summary>
+        public void CloseAllNotification()
+        {
+            if (notificationWindows.Count<=0) return;
+
+
+            //临时的一个窗口列表
+            List<NotificationWindow> _tempNotificationWindows = new List<NotificationWindow>();
+            for (int i = 0; i < notificationWindows.Count; i++)
+            {
+                _tempNotificationWindows.Add(notificationWindows[i]);
+            }
+
+            //把所有的通知窗口，全部关闭
+            for (int i = 0; i < _tempNotificationWindows.Count; i++)
+            {
+                _tempNotificationWindows[i].CloseNotification();
+            }
+        }
+        #endregion
 
 
         #region 私有方法

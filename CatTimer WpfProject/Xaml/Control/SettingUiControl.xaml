@@ -135,7 +135,16 @@
 
 
 
-
+        <!--工作人员名单-->
+        <Popup Name="StaffPopup"
+               PlacementTarget="{Binding ElementName=StaffButton}" Placement="Right"
+               Width="168" Height="234" HorizontalOffset="25" VerticalOffset="-100"
+               IsHitTestVisible="False" AllowsTransparency="True">
+            <!--制作者名单-->
+            <Border Name="StaffBorder" IsHitTestVisible="False" Opacity="0"
+                    Background="{StaticResource Other.Staff.ImageBrush}"></Border>
+        </Popup>
 
     </Canvas>
+
 </UserControl>

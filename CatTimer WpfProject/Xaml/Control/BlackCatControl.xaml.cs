@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Shell;
 
 namespace CatTimer_WpfProject
 {
@@ -43,6 +44,13 @@ namespace CatTimer_WpfProject
 
             //播放音效
             AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);
+
+
+            /* 通知窗口 相关 */
+            AppManager.AppSystems.NotificationSystem.CloseAllNotification();//关闭所有的通知窗口
+
+            /* 任务栏 相关 */
+            AppManager.AppSystems.TaskbarSystem.SetProgressValueAndState(0, TaskbarItemProgressState.Paused);
         }
 
 

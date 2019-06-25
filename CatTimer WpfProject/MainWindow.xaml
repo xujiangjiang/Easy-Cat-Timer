@@ -111,15 +111,7 @@
                 </Border>
 
 
-                <Canvas>
-                    <!--制作者名单-->
-                    <Border Name="StaffBorder" Opacity="0" IsHitTestVisible="False"
-                            Background="{StaticResource Other.Staff.ImageBrush}"
-                            Width="168" Height="234" Canvas.Left="163" Canvas.Top="10"></Border>
-                </Canvas>
-
             </Grid>
-
         </Border>
 
 

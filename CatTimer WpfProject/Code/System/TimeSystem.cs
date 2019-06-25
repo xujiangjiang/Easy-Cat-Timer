@@ -38,7 +38,7 @@ namespace CatTimer_WpfProject
                     StopHandle();
 
                     //更新[任务栏进度条]
-                    AppManager.AppSystems.TaskbarSystem.SetProgressValue(1,TaskbarItemProgressState.Paused);
+                    AppManager.AppSystems.TaskbarSystem.SetProgressValueAndState(1,TaskbarItemProgressState.Paused);
 
                     //弹出通知
                     AppManager.AppSystems.NotificationSystem.ShowNotification();
@@ -51,7 +51,7 @@ namespace CatTimer_WpfProject
                     /* 更新[任务栏进度条] */
                     float _currentTimeSeconds = AppManager.AppDatas.TimeData.CurrentTime.DayToSecond;//当前倒计时的时间
                     float _inputTimeSeconds = AppManager.AppDatas.TimeData.InputTime.DayToSecond;//用户输入的时间
-                    AppManager.AppSystems.TaskbarSystem.SetProgressValue(
+                    AppManager.AppSystems.TaskbarSystem.SetProgressValueAndState(
                         (_inputTimeSeconds-_currentTimeSeconds)/_inputTimeSeconds);//目前进度 = 当前用了多少秒 / 总时间
                 }
             }, 1f, -1, 1f);

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Shell;
 
 namespace CatTimer_WpfProject
 {
@@ -62,6 +63,9 @@ namespace CatTimer_WpfProject
         //当点击猫咪按钮的时候，触发此方法
         private void CatButtonControl_OnClick(object sender, RoutedPropertyChangedEventArgs<bool> e)
         {
+            /* 通知窗口 相关 */
+            AppManager.AppSystems.NotificationSystem.CloseAllNotification();//关闭所有的通知窗口
+
             /* 如果当前的按钮是[暂停按钮] */
             if (IsPauseButton == true)
             {
@@ -71,6 +75,9 @@ namespace CatTimer_WpfProject
 
                 // 然后把猫咪的按钮，变成[恢复按钮]
                 IsPauseButton = false;
+
+                // 进度条变红
+                AppManager.AppSystems.TaskbarSystem.SetProgressState(TaskbarItemProgressState.Error);
             }
 
             /* 如果当前的按钮是[恢复按钮] */
@@ -82,10 +89,14 @@ namespace CatTimer_WpfProject
 
                 // 然后把猫咪的按钮，变成[暂停按钮]
                 IsPauseButton = true;
+
+                // 进度条变黄
+                AppManager.AppSystems.TaskbarSystem.SetProgressState(TaskbarItemProgressState.Paused);
             }
 
             //播放音效
             AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);
+
         }
 
 

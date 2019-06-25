@@ -53,8 +53,34 @@ namespace CatTimer_WpfProject
         /// </summary>
         private void NotificationWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
+            //打开通知窗口
+            OpenNotification(sender as NotificationWindow);
+        }
+
+
+        /// <summary>
+        /// 当点击按钮时
+        /// </summary>
+        private void CloseButton_OnClick(object sender, RoutedPropertyChangedEventArgs<bool> e)
+        {
+            //关闭通知窗口
+            CloseNotification();
+        }
+
+
+
+        #region 私有方法
+        /// <summary>
+        /// 显示通知窗口
+        /// </summary>
+        /// <param name="_notificationWindow">要显示的通知窗口</param>
+        private void OpenNotification(NotificationWindow _notificationWindow)
+        {
+            //让[任务栏进度条]闪烁
+            AppManager.AppSystems.TaskbarSystem.SetProgressTwinkling(true);
+
             //获取这个窗口
-            NotificationWindow self = sender as NotificationWindow;
+            NotificationWindow self = _notificationWindow;
 
             //如果这个窗口不为null
             if (self != null)
@@ -95,36 +121,18 @@ namespace CatTimer_WpfProject
                 {
                     System.Threading.Thread.Sleep(TimeSpan.FromSeconds(showTime));
                     //Invoke到主进程中去执行
-                    Invoke(self, delegate
-                    {
-                        animation = new DoubleAnimation();
-                        animation.Duration =
-                            new Duration(TimeSpan.FromSeconds(animationTime));
-                        //动画执行完毕，关闭当前窗体
-                        animation.Completed += (s, a) => { self.Close(); };
-                        animation.From = 0;
-                        animation.To = windowWidth; //通知从左往右收回
-                        animation.EasingFunction = new SineEase();
-                        self.NotificationGrid.BeginAnimation(Canvas.LeftProperty, animation);
-
-                        //更新[任务栏进度条]
-                        AppManager.AppSystems.TaskbarSystem.SetProgressValue(0, TaskbarItemProgressState.None);
+                    Invoke(self, delegate {
+                        CloseNotification();//关闭通知窗口
                     });
                 });
             }
         }
 
-        static void Invoke(Window win, Action a)
-        {
-            win.Dispatcher.Invoke(a);
-        }
-
-
 
         /// <summary>
-        /// 当点击按钮时
+        /// 关闭通知窗口
         /// </summary>
-        private void CloseButton_OnClick(object sender, RoutedPropertyChangedEventArgs<bool> e)
+        public void CloseNotification()
         {
             //停止提示声
             AppManager.AppSystems.AudioSystem.StopAudio(AudioType.Complete);
@@ -138,12 +146,20 @@ namespace CatTimer_WpfProject
 
             animation.Completed += (s, a) => { this.Close(); };
             animation.From = 0;
-            animation.To = windowWidth;
+            animation.To = windowWidth;//通知从左往右收回
             animation.EasingFunction = new SineEase();
             this.NotificationGrid.BeginAnimation(Canvas.LeftProperty, animation);
 
-            //更新[任务栏进度条]
-            AppManager.AppSystems.TaskbarSystem.SetProgressValue(0, TaskbarItemProgressState.None);
+            //让[任务栏进度条]停止闪烁
+            AppManager.AppSystems.TaskbarSystem.SetProgressTwinkling(false);
+            AppManager.AppSystems.TaskbarSystem.SetProgressState(TaskbarItemProgressState.Paused);
         }
+
+
+        static void Invoke(Window win, Action a)
+        {
+            win.Dispatcher.Invoke(a);
+        }
+        #endregion
     }
 }

@@ -205,6 +205,14 @@ namespace CatTimer_WpfProject
         {
             OpenOrCloseStaff(false);//关闭工作人员的界面
         }
+
+
+        //当鼠标点击[Github按钮]时
+        private void GithubButton_OnClick(object sender, RoutedPropertyChangedEventArgs<bool> e)
+        {
+            //调用系统默认的浏览器
+            System.Diagnostics.Process.Start("https://github.com/xujiangjiang/Easy-Cat-Timer");
+        }
         #endregion
 
         #region 私有方法
@@ -250,8 +258,11 @@ namespace CatTimer_WpfProject
         /// <param name="_isOpen"></param>
         private void OpenOrCloseStaff(bool _isOpen)
         {
-            float _animationTime = 0.45f;//animationTime，用来设置动画的持续时间
+            float _animationTime = 0.45f; //animationTime，用来设置动画的持续时间
 
+            this.StaffPopup.IsOpen = _isOpen;//关闭Popup控件
+
+            //透明度动画
             if (_isOpen == true)
             {
                 /* 动画 */
@@ -259,26 +270,13 @@ namespace CatTimer_WpfProject
 
                 //从透明到不透明
                 _animation.Duration = new Duration(TimeSpan.FromSeconds(_animationTime));
+                _animation.From = 0;
                 _animation.To = 1;
-                AppManager.MainWindow.StaffBorder.BeginAnimation(OpacityProperty, _animation);
-            }
-            else
-            {
-                /* 动画 */
-                DoubleAnimation _animation = new DoubleAnimation();
-
-                //从不透明到透明
-                _animation.Duration = new Duration(TimeSpan.FromSeconds(_animationTime));
-                _animation.To = 0;
-                AppManager.MainWindow.StaffBorder.BeginAnimation(OpacityProperty, _animation);
+                this.StaffBorder.BeginAnimation(OpacityProperty, _animation);
             }
         }
         #endregion
 
-        private void GithubButton_OnClick(object sender, RoutedPropertyChangedEventArgs<bool> e)
-        {
-            //调用系统默认的浏览器
-            System.Diagnostics.Process.Start("https://github.com/xujiangjiang/Easy-Cat-Timer");
-        }
+
     }
 }
