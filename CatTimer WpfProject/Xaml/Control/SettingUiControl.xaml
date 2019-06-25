@@ -139,9 +139,12 @@
         <Popup Name="StaffPopup"
                PlacementTarget="{Binding ElementName=StaffButton}" Placement="Right"
                Width="168" Height="234" HorizontalOffset="25" VerticalOffset="-100"
-               IsHitTestVisible="False" AllowsTransparency="True">
+               IsHitTestVisible="True" AllowsTransparency="True"
+               PopupAnimation="Fade"
+               MouseEnter="StaffButton_OnMouseEnter"
+               MouseLeave="StaffButton_OnMouseLeave">
             <!--制作者名单-->
-            <Border Name="StaffBorder" IsHitTestVisible="False" Opacity="0"
+            <Border Name="StaffBorder" IsHitTestVisible="True" Opacity="1"
                     Background="{StaticResource Other.Staff.ImageBrush}"></Border>
         </Popup>
 

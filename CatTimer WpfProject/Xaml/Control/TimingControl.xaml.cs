@@ -329,7 +329,7 @@ namespace CatTimer_WpfProject
         /// </summary>
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex re = new Regex("[^0-9.-]+");//采用正则表达式
+            Regex re = new Regex("[^0-9]+");//采用正则表达式
 
             e.Handled = re.IsMatch(e.Text);
         }

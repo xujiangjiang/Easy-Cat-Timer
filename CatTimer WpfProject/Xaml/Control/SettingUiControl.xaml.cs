@@ -195,6 +195,9 @@ namespace CatTimer_WpfProject
 
 
 
+
+
+        /* 按钮 */
         //当鼠标进入[工作人员按钮]时
         private void StaffButton_OnMouseEnter(object sender, MouseEventArgs e)
         {
@@ -203,6 +206,7 @@ namespace CatTimer_WpfProject
         //当鼠标移出[工作人员按钮]时
         private void StaffButton_OnMouseLeave(object sender, MouseEventArgs e)
         {
+
             OpenOrCloseStaff(false);//关闭工作人员的界面
         }
 
@@ -258,23 +262,9 @@ namespace CatTimer_WpfProject
         /// <param name="_isOpen"></param>
         private void OpenOrCloseStaff(bool _isOpen)
         {
-            float _animationTime = 0.45f; //animationTime，用来设置动画的持续时间
-
-            this.StaffPopup.IsOpen = _isOpen;//关闭Popup控件
-
-            //透明度动画
-            if (_isOpen == true)
-            {
-                /* 动画 */
-                DoubleAnimation _animation = new DoubleAnimation();
-
-                //从透明到不透明
-                _animation.Duration = new Duration(TimeSpan.FromSeconds(_animationTime));
-                _animation.From = 0;
-                _animation.To = 1;
-                this.StaffBorder.BeginAnimation(OpacityProperty, _animation);
-            }
+            this.StaffPopup.IsOpen = _isOpen; //关闭Popup控件
         }
+
         #endregion
 
 
