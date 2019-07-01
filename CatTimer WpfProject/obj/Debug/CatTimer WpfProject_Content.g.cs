@@ -17,5 +17,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown-01.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown-02.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown-03.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/addorlessnumber.wav")]
 
 

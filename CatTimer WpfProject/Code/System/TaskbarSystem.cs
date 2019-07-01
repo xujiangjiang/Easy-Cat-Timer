@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Shell;
+using System.Windows.Threading;
 
 namespace CatTimer_WpfProject
 {
@@ -12,7 +13,18 @@ namespace CatTimer_WpfProject
     /// </summary>
     public class TaskbarSystem
     {
-        private TimeTask _twinklingTask = null;//闪烁的任务
+        private DispatcherTimer twinklingTimer;//闪烁的计时器
+
+
+        #region 构造方法
+        public TaskbarSystem()
+        {
+            //设置定时器
+            twinklingTimer = new DispatcherTimer();//定时器：类似于Unity中的SuperInvoke插件
+            twinklingTimer.Interval = new TimeSpan(0,0,0,0,385);//定时器的间隔时间（0.385秒）：每隔多少秒，调用一次代码？
+            twinklingTimer.Tick += TwinklingTimerOnTick;//要调用的代码
+        }
+        #endregion
 
 
 
@@ -57,8 +69,6 @@ namespace CatTimer_WpfProject
         }
         #endregion
 
-
-
         #region 公开方法 -[其他]
         /// <summary>
         /// 进度条是否闪烁？
@@ -66,25 +76,14 @@ namespace CatTimer_WpfProject
         /// <param name="_isTwinkling">是否闪烁？</param>
         public void SetProgressTwinkling(bool _isTwinkling)
         {
-            float _time = 0.45f;//每隔多少秒闪烁一次？
-
             //停止闪烁任务
             StopTwinklingTask();
 
             //如果要让进度条闪烁
             if (_isTwinkling == true)
             {
-                _twinklingTask = AppManager.Timer.AddTimeTask(() =>
-                {
-                    if (AppManager.MainWindow.taskbarItemInfo.ProgressState != TaskbarItemProgressState.None)
-                    {
-                        AppManager.MainWindow.taskbarItemInfo.ProgressState = TaskbarItemProgressState.None;
-                    }
-                    else
-                    {
-                        AppManager.MainWindow.taskbarItemInfo.ProgressState = TaskbarItemProgressState.Paused;
-                    }
-                }, 0f, -1, _time);
+                //开启[闪烁]计时器
+                twinklingTimer.Start();
             }
         }
 
@@ -93,10 +92,23 @@ namespace CatTimer_WpfProject
         /// </summary>
         private void StopTwinklingTask()
         {
-            if (_twinklingTask != null)
+            //关闭[闪烁]计时器
+            twinklingTimer.Stop();
+        }
+        #endregion
+
+
+        #region 私有方法 -[注册计时器事件]
+        // [闪烁]的定时器 的Tick事件：当定时器每次达到间隔时间时，都会触发一次Tick事件
+        private void TwinklingTimerOnTick(object sender, EventArgs e)
+        {
+            if (AppManager.MainWindow.taskbarItemInfo.ProgressState != TaskbarItemProgressState.None)
             {
-                AppManager.Timer.RemoveTimeTask(_twinklingTask);
-                _twinklingTask = null;
+                AppManager.MainWindow.taskbarItemInfo.ProgressState = TaskbarItemProgressState.None;
+            }
+            else
+            {
+                AppManager.MainWindow.taskbarItemInfo.ProgressState = TaskbarItemProgressState.Paused;
             }
         }
         #endregion

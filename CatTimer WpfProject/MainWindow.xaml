@@ -9,7 +9,8 @@
         
         AllowsTransparency="True" WindowStyle="None" Background="Transparent"
         
-        Loaded="MainWindow_OnLoaded">
+        Loaded="MainWindow_OnLoaded"
+        PreviewKeyDown="MainWindow_OnPreviewKeyDown">
 
 
     <!--任务栏的相关控件-->

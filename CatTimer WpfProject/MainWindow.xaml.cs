@@ -69,6 +69,21 @@ namespace CatTimer_WpfProject
         }
         #endregion
 
+        #region 注册事件 -[其他]
+        //当点击了[键盘上的按键]时
+        private void MainWindow_OnPreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            //如果点击的是[回车]键，并且[计时（设定时间）]的界面是开启的
+            if (e.KeyStates == Keyboard.GetKeyStates(Key.Return) && AppManager.MainWindow.TimingUserControl.Visibility == Visibility.Visible)
+            {
 
+                //播放音效
+                AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);
+
+                //开始计时
+                AppManager.MainWindow.TimingUserControl.StartTimer();
+            }
+        }
+        #endregion
     }
 }

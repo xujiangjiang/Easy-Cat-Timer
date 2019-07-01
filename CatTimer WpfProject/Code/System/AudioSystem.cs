@@ -17,12 +17,12 @@ namespace CatTimer_WpfProject
         private MediaPlayer completeSoundPlayer;//[完成]的音效
         private SoundPlayer defaultButtonDownSoundPlayer;//[普通按钮按下]的音效
         private SoundPlayer defaultButtonUpSoundPlayer;//[普通按钮抬起]的音效
+        private SoundPlayer addOrlessNumberSoundPlayer;//[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
         private List<SoundPlayer> catUpSoundPlayers;//[猫咪站起来]的音效
         private List<SoundPlayer> catDownSoundPlayers;//[猫咪坐下]的音效
 
 
         #region 公开属性
-
         /// <summary>
         /// [完成]音效的长度（单位：秒）
         /// </summary>
@@ -44,6 +44,9 @@ namespace CatTimer_WpfProject
             //[普通按钮按下]+[普通按钮抬起]的音效
             defaultButtonDownSoundPlayer = new SoundPlayer(Properties.Resources.DefaultButtonDown);
             defaultButtonUpSoundPlayer = new SoundPlayer(Properties.Resources.DefaultButtonUp);
+
+            //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+            addOrlessNumberSoundPlayer = new SoundPlayer(Properties.Resources.AddOrLessNumber);
 
             //[猫咪站起来]的音效
             catUpSoundPlayers = new List<SoundPlayer>();
@@ -114,6 +117,10 @@ namespace CatTimer_WpfProject
                     break;
                 case AudioType.DefaultButtonUp:
                     defaultButtonUpSoundPlayer.Play();
+                    break;
+
+                case AudioType.AddOrlessNumberSoundPlayer:
+                    addOrlessNumberSoundPlayer.Play();
                     break;
             }
         }

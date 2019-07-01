@@ -29,8 +29,6 @@ namespace CatTimer_WpfProject
         /* 子系统 */
         private static AppSystems appSystems = new AppSystems();//App中的所有系统
 
-        /* 计时器（类似于Unity的SuperInvoke插件） */
-        private static Timer timer = new Timer();
 
 
         #region 公开属性
@@ -60,13 +58,6 @@ namespace CatTimer_WpfProject
             get { return appDatas; }
         }
 
-        /// <summary>
-        /// 计时器（类似于Unity的SuperInvoke插件）
-        /// </summary>
-        public static Timer Timer
-        {
-            get { return timer; }
-        }
 
         /// <summary>
         /// App中的所有系统

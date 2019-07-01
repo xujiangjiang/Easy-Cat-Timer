@@ -87,11 +87,11 @@
         </EventTrigger>
 
         <!--按钮-->
-        <EventTrigger RoutedEvent="UIElement.PreviewMouseDown" SourceName="CatButtonControl">
+        <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonDown" SourceName="CatButtonControl">
             <PauseStoryboard BeginStoryboardName="BeginRopeGridStoryboard"></PauseStoryboard>
             <BeginStoryboard Storyboard="{StaticResource CatButtonControl.OnMouseDown}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.PreviewMouseUp" SourceName="CatButtonControl">
+        <EventTrigger RoutedEvent="UIElement.PreviewMouseLeftButtonUp" SourceName="CatButtonControl">
             <ResumeStoryboard BeginStoryboardName="BeginRopeGridStoryboard"></ResumeStoryboard>
             <BeginStoryboard Storyboard="{StaticResource CatButtonControl.OnMouseUp}"/>
         </EventTrigger>

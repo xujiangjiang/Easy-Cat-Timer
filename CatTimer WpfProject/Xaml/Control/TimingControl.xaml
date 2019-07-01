@@ -8,7 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="344" d:DesignWidth="394"
              Name="TimingUserControl">
+
     <Grid>
+
         <!--白底-->
         <Border Background="White" Opacity="1"></Border>
 
@@ -53,6 +55,7 @@
                      InputMethod.IsInputMethodEnabled="False"
                      PreviewTextInput="txt_PreviewTextInput"
                      PreviewKeyDown="txt_PreviewKeyDown"
+                     PreviewMouseWheel="txt_OnPreviewMouseWheel"
                          
                      ContextMenu="{x:Null}"/>
             </Border>
@@ -77,6 +80,7 @@
                      InputMethod.IsInputMethodEnabled="False"
                      PreviewTextInput="txt_PreviewTextInput"
                      PreviewKeyDown="txt_PreviewKeyDown"
+                     PreviewMouseWheel="txt_OnPreviewMouseWheel"
                          
                      ContextMenu="{x:Null}"/>
             </Border>
@@ -92,27 +96,35 @@
                                  Icon="{StaticResource UpDownButton.Up.ImageBrush}"
                                  IconWidth="20" IconHeight="20" Canvas.Top="36" Canvas.Left="102"
                                  Cursor="Hand"
-                                 Click="MinuteUpButton_Click"/>
+                                 Click="MinuteUpButton_Click"
+                                 PreviewMouseLeftButtonDown="MinuteUpButton_OnPreviewMouseLeftButtonDown"
+                                 PreviewMouseLeftButtonUp="MinuteUpButton_OnPreviewMouseLeftButtonUp"/>
             <local:ButtonControl x:Name="MinuteDownButton"
                                  ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
                                  Icon="{StaticResource UpDownButton.Down.ImageBrush}"
                                  IconWidth="20" IconHeight="20" Canvas.Top="261" Canvas.Left="102"
                                  Cursor="Hand"
-                                 Click="MinuteDownButton_Click"/>
+                                 Click="MinuteDownButton_Click"
+                                 PreviewMouseLeftButtonDown="MinuteDownButton_OnPreviewMouseLeftButtonDown"
+                                 PreviewMouseLeftButtonUp="MinuteDownButton_OnPreviewMouseLeftButtonUp"/>
 
-            <!--分钟按钮-->
+            <!--秒钟按钮-->
             <local:ButtonControl x:Name="SecondUpButton"
                                  ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
                                  Icon="{StaticResource UpDownButton.Up.ImageBrush}"
                                  IconWidth="20" IconHeight="20" Canvas.Top="36" Canvas.Left="270"
                                  Cursor="Hand"
-                                 Click="SecondUpButton_Click"/>
+                                 Click="SecondUpButton_Click"
+                                 PreviewMouseLeftButtonDown="SecondDownButton_OnPreviewMouseLeftButtonDown"
+                                 PreviewMouseLeftButtonUp="SecondDownButton_OnPreviewMouseLeftButtonUp"/>
             <local:ButtonControl x:Name="SecondDownButton"
                                  ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
                                  Icon="{StaticResource UpDownButton.Down.ImageBrush}"
                                  IconWidth="20" IconHeight="20" Canvas.Top="261" Canvas.Left="270"
                                  Cursor="Hand"
-                                 Click="SecondDownButton_Click"/>
+                                 Click="SecondDownButton_Click"
+                                 PreviewMouseLeftButtonDown="SecondDownButton_OnPreviewMouseLeftButtonDown"
+                                 PreviewMouseLeftButtonUp="SecondDownButton_OnPreviewMouseLeftButtonUp"/>
 
             <!--开始按钮-->
             <local:ButtonControl x:Name="SrartButton"

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CatTimer_WpfProject
 {
@@ -28,7 +29,12 @@ namespace CatTimer_WpfProject
         public TimingControl()
         {
             InitializeComponent();
+
+
+            //初始化所有的定时器
+            InitializeTimers();
         }
+
 
 
 
@@ -118,7 +124,19 @@ namespace CatTimer_WpfProject
 
 
 
+
+
         #region 控件的事件
+        /// <summary>
+        /// 当点击[开始]按钮时
+        /// </summary>
+        private void StartButton_Click(object sender, RoutedPropertyChangedEventArgs<bool> e)
+        {
+            StartTimer();
+        }
+        #endregion
+
+        #region 控件的事件 -[分钟数按钮 and 秒钟数按钮]
         /// <summary>
         /// 当点击[分钟的增加]按钮时
         /// </summary>
@@ -155,32 +173,170 @@ namespace CatTimer_WpfProject
             AddOrLessSecond(-1);
         }
 
-        /// <summary>
-        /// 当点击[开始]按钮时
-        /// </summary>
-        private void StartButton_Click(object sender, RoutedPropertyChangedEventArgs<bool> e)
+
+
+
+
+
+        //当按下[分钟数 增加]按钮的时候
+        private void MinuteUpButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //分钟数：把String转化为int
-            string _minuteString = MinuteTextBlock.Text;
-            int _minuteNumber = StringToInt(_minuteString);
+            addMinuteTimer.Start();
+        }
+        //当抬起[分钟数 增加]按钮的时候
+        private void MinuteUpButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            addMinuteTimer.Stop();
+            if (isTimerWorking == true)
+            {
+                AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);//播放音效
+            }
 
-            //秒数：把String转化为int
-            string _secondString = SecondTextBlock.Text;
-            int _secondNumber = StringToInt(_secondString);
+            addMinuteTimer.Interval = startTime;
+            isTimerWorking = false;
+        }
 
 
-            //更改时间
-            int _totalSecond = _minuteNumber * 60 + _secondNumber;//倒计时的总秒数
-            AppManager.AppDatas.TimeData.CurrentTime.DayToSecond = _totalSecond;
-            AppManager.AppDatas.TimeData.InputTime.DayToSecond = _totalSecond;
+        //当按下[分钟数 减少]按钮的时候
+        private void MinuteDownButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lessMinuteTimer.Start();
+        }
+        //当抬起[分钟数 减少]按钮的时候
+        private void MinuteDownButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            lessMinuteTimer.Stop();
+            if (isTimerWorking == true)
+            {
+                AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);//播放音效
+            }
 
-            //让计时开始
-            AppManager.AppSystems.TimeSystem.StartHandle();
+            lessMinuteTimer.Interval = startTime;
+            isTimerWorking = false;
+        }
 
-            //关闭此界面
-            OpenOrClose(false);
+
+        //当按下[秒钟数 增加]按钮的时候
+        private void SecondUpButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            addSecondTimer.Start();
+        }
+        //当抬起[秒钟数 增加]按钮的时候
+        private void SecondUpButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            addSecondTimer.Stop();
+            if (isTimerWorking == true)
+            {
+                AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);//播放音效
+            }
+
+            addSecondTimer.Interval = startTime;
+            isTimerWorking = false;
+        }
+
+
+        //当按下[秒钟数 减少]按钮的时候
+        private void SecondDownButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lessSecondTimer.Start();
+        }
+        //当抬起[秒钟数 减少]按钮的时候
+        private void SecondDownButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            lessSecondTimer.Stop();
+            if (isTimerWorking == true)
+            {
+                AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonUp);//播放音效
+            }
+
+            lessSecondTimer.Interval = startTime;
+            isTimerWorking = false;
         }
         #endregion
+
+        #region 计时器相关 -[当按住[增加/减少 分钟数或秒钟数]的按钮不放时，会一直增加/减少 分钟数或秒钟数]
+        private DispatcherTimer addMinuteTimer;//增加 分钟数 的定时器（当按住[增加分钟数]的按钮不放时，会一直增加分钟数）
+        private DispatcherTimer lessMinuteTimer;//减少 分钟数 的定时器（当按住[减少分钟数]的按钮不放时，会一直减少分钟数）
+        private DispatcherTimer addSecondTimer;//增加 秒钟数 的定时器（当按住[增加秒钟数]的按钮不放时，会一直增加秒钟数）
+        private DispatcherTimer lessSecondTimer;//减少 秒钟数 的定时器（当按住[秒钟分钟数]的按钮不放时，会一直减少秒钟数）
+
+        private bool isTimerWorking = false;//是否有计时器在工作？
+        private TimeSpan startTime = new TimeSpan(0,0,0,0,750);//开始时的间隔时间（当按下按钮，多少秒后，开始一直增加数字？）
+        private TimeSpan cdTime = new TimeSpan(0, 0, 0, 0, 200);//每隔多少秒，增加或者减少一个单位的时间？（0.2秒）
+
+
+        /// <summary>
+        /// 初始化所有的定时器
+        /// </summary>
+        private void InitializeTimers()
+        {
+
+            /* 设置[分钟数 增加]的定时器 */
+            addMinuteTimer = new DispatcherTimer();//定时器：类似于Unity中的SuperInvoke插件
+            addMinuteTimer.Interval = startTime;//定时器的间隔时间：每隔多少秒，调用一次代码？
+            addMinuteTimer.Tick += AddMinuteTimer_OnTick;//要调用的代码（注册定时器事件）
+
+            /* 设置[分钟数 减少]的定时器 */
+            lessMinuteTimer = new DispatcherTimer();//定时器：类似于Unity中的SuperInvoke插件
+            lessMinuteTimer.Interval = startTime;//定时器的间隔时间：每隔多少秒，调用一次代码？
+            lessMinuteTimer.Tick += LessMinuteTimer_OnTick;//要调用的代码（注册定时器事件）
+
+            /* 设置[秒钟数 增加]的定时器 */
+            addSecondTimer = new DispatcherTimer();//定时器：类似于Unity中的SuperInvoke插件
+            addSecondTimer.Interval = startTime;//定时器的间隔时间：每隔多少秒，调用一次代码？
+            addSecondTimer.Tick += AddSecondTimer_OnTick;//要调用的代码（注册定时器事件）
+
+            /* 设置[秒钟数 减少]的定时器 */
+            lessSecondTimer = new DispatcherTimer();//定时器：类似于Unity中的SuperInvoke插件
+            lessSecondTimer.Interval = startTime;//定时器的间隔时间：每隔多少秒，调用一次代码？
+            lessSecondTimer.Tick += LessSecondTimer_OnTick;//要调用的代码（注册定时器事件）
+        }
+
+
+
+
+
+        /* 定时器事件 */
+        //当玩家一直按住[增加分钟数]的按钮时，每隔0.3秒，增加1点分钟数
+        private void AddMinuteTimer_OnTick(object sender, EventArgs e)
+        {
+            isTimerWorking = true;//修改标识符
+
+            AddOrLessMinute(1);//分钟数+1
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
+            addMinuteTimer.Interval = cdTime;//修改间隔时间
+        }
+        //当玩家一直按住[减少分钟数]的按钮时，每隔0.3秒，减少1点分钟数
+        private void LessMinuteTimer_OnTick(object sender, EventArgs e)
+        {
+            isTimerWorking = true;//修改标识符
+
+            AddOrLessMinute(-1);//分钟数-1
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
+            lessMinuteTimer.Interval = cdTime;//修改间隔时间
+        }
+
+
+        //当玩家一直按住[增加秒钟数]的按钮时，每隔0.3秒，增加1点秒钟数
+        private void AddSecondTimer_OnTick(object sender, EventArgs e)
+        {
+            isTimerWorking = true;//修改标识符
+
+            AddOrLessSecond(1);//秒钟数+1
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
+            addSecondTimer.Interval = cdTime;//修改间隔时间
+        }
+        //当玩家一直按住[减少秒钟数]的按钮时，每隔0.3秒，减少1点秒钟数
+        private void LessSecondTimer_OnTick(object sender, EventArgs e)
+        {
+            isTimerWorking = true;//修改标识符
+
+            AddOrLessSecond(-1);//秒钟数-1
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
+            lessSecondTimer.Interval = cdTime;//修改间隔时间
+        }
+        #endregion
+
 
 
 
@@ -231,6 +387,34 @@ namespace CatTimer_WpfProject
         }
         #endregion
 
+        #region 公开方法 -[开始计时]
+        /// <summary>
+        /// 开始计时
+        /// </summary>
+        public void StartTimer()
+        {
+            //分钟数：把String转化为int
+            string _minuteString = MinuteTextBlock.Text;
+            int _minuteNumber = StringToInt(_minuteString);
+
+            //秒数：把String转化为int
+            string _secondString = SecondTextBlock.Text;
+            int _secondNumber = StringToInt(_secondString);
+
+
+            //更改时间
+            int _totalSecond = _minuteNumber * 60 + _secondNumber;//倒计时的总秒数
+            AppManager.AppDatas.TimeData.CurrentTime.DayToSecond = _totalSecond;
+            AppManager.AppDatas.TimeData.InputTime.DayToSecond = _totalSecond;
+
+            //让计时开始
+            AppManager.AppSystems.TimeSystem.StartHandle();
+
+            //关闭此界面
+            OpenOrClose(false);
+        }
+        #endregion
+
         #region 私有方法 -[修改分钟数和秒数]
         /// <summary>
         /// 加或者减 分钟数
@@ -246,6 +430,16 @@ namespace CatTimer_WpfProject
 
             //分钟数+1或者分钟数-1
             _minuteNumber += _changeMinute;
+
+            //如果分钟数为-1，那么分钟数就为99
+            if (_minuteNumber <= -1)
+            {
+                _minuteNumber = 99;
+            }
+            else if(_minuteNumber >= 100)
+            {
+                _minuteNumber = 0;
+            }
 
             //分钟数要限制在0-99之间
             _minuteNumber = Tools.Clamp(_minuteNumber, 0, 99);
@@ -276,6 +470,16 @@ namespace CatTimer_WpfProject
 
             //秒数+1或者秒数-1
             _secondNumber += _changeSecond;
+
+            //如果秒数为-1，那么秒钟数就为59
+            if (_secondNumber <= -1)
+            {
+                _secondNumber = 59;
+            }
+            else if (_secondNumber >= 60)
+            {
+                _secondNumber = 0;
+            }
 
             //秒数要限制在0-60之间
             _secondNumber = Tools.Clamp(_secondNumber, 0, 60);
@@ -330,7 +534,6 @@ namespace CatTimer_WpfProject
         private void txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex re = new Regex("[^0-9]+");//采用正则表达式
-
             e.Handled = re.IsMatch(e.Text);
         }
 
@@ -347,6 +550,17 @@ namespace CatTimer_WpfProject
             else
                 e.Handled = false;
         }
+
+
+        /// <summary>
+        /// 禁用鼠标滚轮
+        /// </summary>
+        private void txt_OnPreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            e.Handled = true;
+        }
         #endregion
+
+        
     }
 }

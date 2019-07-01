@@ -63,6 +63,15 @@ namespace CatTimer_WpfProject.Properties {
         /// <summary>
         ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AddOrLessNumber {
+            get {
+                return ResourceManager.GetStream("AddOrLessNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream CatDown_01 {
             get {
                 return ResourceManager.GetStream("CatDown_01", resourceCulture);

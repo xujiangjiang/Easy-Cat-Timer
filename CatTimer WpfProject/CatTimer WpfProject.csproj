@@ -94,8 +94,6 @@
     <Compile Include="Code\System\SaveSystem.cs" />
     <Compile Include="Code\System\TaskbarSystem.cs" />
     <Compile Include="Code\System\TimeSystem.cs" />
-    <Compile Include="Code\Timer\Timer.cs" />
-    <Compile Include="Code\Timer\TimeTask.cs" />
     <Compile Include="Xaml\Control\BlackCatControl.xaml.cs">
       <DependentUpon>BlackCatControl.xaml</DependentUpon>
     </Compile>
@@ -365,6 +363,7 @@
     <Content Include="Asset\Audio\CatDown-01.wav" />
     <Content Include="Asset\Audio\CatDown-02.wav" />
     <Content Include="Asset\Audio\CatDown-03.wav" />
+    <Content Include="Asset\Audio\AddOrLessNumber.wav" />
     <Resource Include="Asset\Image\Other\Staff.png" />
     <Resource Include="Asset\Icon\Icon.ico" />
   </ItemGroup>

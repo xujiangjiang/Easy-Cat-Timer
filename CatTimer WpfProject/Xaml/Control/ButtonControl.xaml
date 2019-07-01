@@ -47,8 +47,8 @@
                 Background="{Binding ElementName=ButtonUserControl,Path=Background}" 
                 BorderBrush="{Binding ElementName=ButtonUserControl,Path=BorderBrush}"
                 RenderTransformOrigin="0.5,0.5"
-                PreviewMouseDown="Button_OnPreviewMouseDown"
-                PreviewMouseUp="Button_OnPreviewMouseUp"
+                PreviewMouseLeftButtonDown="Button_OnPreviewMouseDown"
+                PreviewMouseLeftButtonUp="Button_OnPreviewMouseUp"
                 Click="Button_OnClick">
 
            
