@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CatTimer_WpfProject.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="IsHaveVoice" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+    <Setting Name="Volume" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="Language" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>

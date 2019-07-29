@@ -85,4 +85,11 @@ C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\obj\Debug\Code\Notificati
 C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\obj\Debug\Code\Notification\NotificationWindow.baml
 C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\Complete.wav
 C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\obj\Debug\CatTimer WpfProject_Content.g.cs
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\obj\Debug\Xaml\Style\SliderDictionary.baml
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\DefaultButtonUp.wav
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\DefaultButtonDown.wav
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\AddOrLessNumber.wav
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\VolumeTest.wav
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\CatUp.wav
+C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\bin\Debug\Asset\Audio\CatDown.wav
 C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\obj\Debug\CatTimer WpfProject.csprojAssemblyReference.cache

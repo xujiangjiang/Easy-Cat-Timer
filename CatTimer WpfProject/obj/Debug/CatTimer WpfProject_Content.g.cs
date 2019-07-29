@@ -11,12 +11,9 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/complete.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/defaultbuttonup.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/defaultbuttondown.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catup-01.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catup-02.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catup-03.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown-01.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown-02.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown-03.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/volumetest.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catup.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/addorlessnumber.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("asset/audio/catdown.wav")]
 
 

@@ -17,6 +17,14 @@ namespace CatTimer_WpfProject
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
             AppManager.MainApp = this;
+
+            AppManager.Awake();
+        }
+
+        //当程序退出时，触发此方法
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            AppManager.Exit();
         }
     }
 }

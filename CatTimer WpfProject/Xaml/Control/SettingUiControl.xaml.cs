@@ -36,89 +36,6 @@ namespace CatTimer_WpfProject
 
 
 
-        #region 依赖项属性：IsHaveVoice
-        /// <summary>
-        /// 依赖项属性：是否有声音？
-        /// </summary>
-        public static DependencyProperty IsHaveVoiceProperty;
-
-        /// <summary>
-        /// 公开属性：是否有声音？
-        /// </summary>
-        public bool IsHaveVoice
-        {
-            get { return (bool)GetValue(IsHaveVoiceProperty); }
-            set { SetValue(IsHaveVoiceProperty, value); }
-        }
-
-        /// <summary>
-        /// 依赖项属性发生改变时，触发的事件：
-        /// 当IsHaveVoiceProperty依赖项属性，的属性值发生改变的时候，调用这个方法
-        /// </summary>
-        /// <param name="sender">依赖项对象</param>
-        /// <param name="e">依赖项属性改变事件 的参数（里面有这个属性的新的值，和旧的值）</param>
-        private static void OnIsHaveVoiceChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        {
-        }
-        #endregion
-
-        #region 依赖项属性：Language
-        /// <summary>
-        /// 依赖项属性：语言
-        /// </summary>
-        public static DependencyProperty LanguageProperty;
-
-        /// <summary>
-        /// 公开属性：语言
-        /// </summary>
-        public LanguageType Language
-        {
-            get { return (LanguageType)GetValue(LanguageProperty); }
-            set { SetValue(LanguageProperty, value); }
-        }
-
-        /// <summary>
-        /// 依赖项属性发生改变时，触发的事件：
-        /// 当LanguageProperty依赖项属性，的属性值发生改变的时候，调用这个方法
-        /// </summary>
-        /// <param name="sender">依赖项对象</param>
-        /// <param name="e">依赖项属性改变事件 的参数（里面有这个属性的新的值，和旧的值）</param>
-        private static void OnLanguageChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-        #endregion
-
-
-
-
-        #region 静态构造方法：注册依赖项属性 和 路由事件
-        /// <summary>
-        /// 静态构造方法：在里面注册依赖项属性 和 路由事件
-        /// </summary>
-        static SettingUiControl()
-        {
-            /*注册依赖项属性*/
-            //注册IsHaveVoiceProperty
-            IsHaveVoiceProperty = DependencyProperty.Register(
-                "IsHaveVoice", //属性的名字
-                typeof(bool),//属性的类型
-                typeof(SettingUiControl),//这个属性属于哪个控件？
-                new FrameworkPropertyMetadata(//属性的初始值和回调函数
-                    //初始值
-                    (bool)true,
-                    //当属性的值发生改变时，调用什么方法？
-                    new PropertyChangedCallback(OnIsHaveVoiceChanged))
-            );
-
-            //注册LanguageProperty
-            LanguageProperty = DependencyProperty.Register(
-                "Language", typeof(LanguageType), typeof(SettingUiControl),
-                new FrameworkPropertyMetadata((LanguageType)LanguageType.Chinese, new PropertyChangedCallback(OnLanguageChanged)));
-
-        }
-        #endregion
-
 
 
 
@@ -142,7 +59,6 @@ namespace CatTimer_WpfProject
             /*做一些处理*/
             this.LanguageToggleControl.IsChecked = false;//关闭语言组
             SetLanguageImage(LanguageType.Chinese);//设置语言的图片
-            AppManager.AppSystems.SaveSystem.Save();//保存
         }
 
         //当点击[英文]按钮的时候，触发此方法
@@ -151,7 +67,6 @@ namespace CatTimer_WpfProject
             /*做一些处理*/
             this.LanguageToggleControl.IsChecked = false;//关闭语言组
             SetLanguageImage(LanguageType.English);//设置语言的图片
-            AppManager.AppSystems.SaveSystem.Save();//保存
         }
 
 
@@ -177,22 +92,6 @@ namespace CatTimer_WpfProject
         }
 
 
-        //当点击[声音]的复选框时
-        private void IsHaveAudioCheckBoxControl_OnClick(object sender, RoutedPropertyChangedEventArgs<bool> e)
-        {
-            //修改声音的值
-            AppManager.AppDatas.SettingData.IsHaveVoice = this.IsHaveAudioCheckBoxControl.IsChecked;
-
-            //如果是[有声音]，那么就播放点击音效
-            if (AppManager.AppDatas.SettingData.IsHaveVoice == true)
-            {
-                AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonDown);
-            }
-
-            //保存
-            AppManager.AppSystems.SaveSystem.Save();
-        }
-
 
 
 
@@ -217,6 +116,40 @@ namespace CatTimer_WpfProject
             //调用系统默认的浏览器
             System.Diagnostics.Process.Start("https://github.com/xujiangjiang/Easy-Cat-Timer");
         }
+
+
+
+
+        /* 滑动条 */
+        //当鼠标进入[音量滑动条]时
+        private void VolumeSlider_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            this.VolumePopup.IsOpen = true; //打开Popup控件
+        }
+
+        //当鼠标离开[音量滑动条]时
+        private void VolumeSlider_OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            this.VolumePopup.IsOpen = false; //关闭Popup控件
+        }
+
+        //当[音量滑动条]的值 改变时
+        private void VolumeSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            AppManager.AppSystems.AudioSystem.OnVolumeChange(AppManager.AppDatas.SettingData.Volume);
+        }
+
+        //当鼠标在[音量滑动条]上按下时
+        private void VolumeSlider_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonDown);//播放音效
+        }
+
+        //当鼠标在[音量滑动条]上抬起时
+        private void VolumeSlider_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.VolumeTest);//播放音效
+        }
         #endregion
 
         #region 私有方法
@@ -225,11 +158,10 @@ namespace CatTimer_WpfProject
         /// </summary>
         private void SetLanguageImage(LanguageType _languageType)
         {
-            Language = _languageType;
             ImageBrush _imageBrush = null;
 
 
-            if (Language == LanguageType.Chinese)
+            if (_languageType == LanguageType.Chinese)
             {
                 //如果是中文，就返回中文的图片
                 if (AppManager.MainApp != null)
@@ -237,7 +169,7 @@ namespace CatTimer_WpfProject
                     _imageBrush = AppManager.MainApp.Resources["Setting.Chinese.ImageBrush"] as ImageBrush;
                 }
             }
-            else if (Language == LanguageType.English)
+            else if (_languageType == LanguageType.English)
             {
                 //返回英文的图片
                 if (AppManager.MainApp != null)
@@ -252,7 +184,7 @@ namespace CatTimer_WpfProject
 
 
             //更改语言
-            AppManager.AppSystems.LanguageSystem.SetLanguage(Language);
+            AppManager.AppSystems.LanguageSystem.SetLanguage(_languageType);
         }
 
 
@@ -266,6 +198,7 @@ namespace CatTimer_WpfProject
         }
 
         #endregion
+
 
 
     }

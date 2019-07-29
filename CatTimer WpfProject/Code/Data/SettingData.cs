@@ -13,22 +13,23 @@ namespace CatTimer_WpfProject
     /// </summary>
     public class SettingData : INotifyPropertyChanged
     {
-        /*设置相关*/
-        private bool isHaveVoice;//是否有声音？
+        /* 设置相关 */
+        private int volume;//音量
         private LanguageType language;//语言
+
 
 
         #region 公开属性
         /// <summary>
-        /// 是否有声音？
+        /// 音量
         /// </summary>
-        public bool IsHaveVoice
+        public int Volume
         {
-            get { return isHaveVoice; }
+            get { return volume; }
             set
             {
-                isHaveVoice = value;
-                PropertyChange("IsHaveVoice");//更新UI
+                volume = value;
+                PropertyChange("Volume");//更新UI
             }
         }
 
@@ -49,7 +50,7 @@ namespace CatTimer_WpfProject
         #region 构造方法
         public SettingData()
         {
-            isHaveVoice = false;
+            volume = 100;
             language = LanguageType.Chinese;
         }
         #endregion 构造方法

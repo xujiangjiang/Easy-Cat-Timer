@@ -2,7 +2,7 @@
 
 Easy Cat Timer是一个非常简单计时器（倒计时）软件。
 
-*（We will add the English Description in the README.md file as soon as possible.）*
+（[Please click here for the English document.](README[EN].md)）
 
 ![主界面](ReadMeImage/MainWindow.png)
 
@@ -16,7 +16,7 @@ Easy Cat Timer是一个非常简单计时器（倒计时）软件。
 
 <br/>
 
-最新版本：  v1.0.0.0 (2019年07月01日)
+最新版本：  v1.0.1.0 (2019年07月30日)
 
 下载地址：[点击下载v1.0.0.0版本](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v1.0.0.0/Easy.Cat.Timer.v1.0.0.0.zip)
 
@@ -108,9 +108,12 @@ Easy Cat Timer是一个使用C#语言编写的WPF应用（.NET Framework），�
 
 <br/>
 
+**v1.0.1.0（2019.07.30）：**
 
+1. 优化：在设置时间的时候，可以通过滚动鼠标中键来调整时间——*感谢：小木*
+  2. 优化：可以调节音量——*感谢：[TBR] Flaming、乐乐*
 
-
+<br/>
 
 
 

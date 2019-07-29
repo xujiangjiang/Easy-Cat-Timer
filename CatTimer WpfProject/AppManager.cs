@@ -71,16 +71,31 @@ namespace CatTimer_WpfProject
 
         #region 初始化
         /// <summary>
+        /// 启动程序（在Start()之前）
+        /// </summary>
+        public static void Awake()
+        {
+            //读取读取数据
+            AppSystems.SaveSystem.Load();
+        }
+
+        /// <summary>
         /// 初始化程序
         /// </summary>
         public static void Start()
         {
             //数据绑定赋值
             MainWindow.DataContext = AppDatas;
+        }
 
-            //读取读取数据
-            AppSystems.SaveSystem.Load();
 
+        /// <summary>
+        /// 退出程序
+        /// </summary>
+        public static void Exit()
+        {
+            //保存
+            AppManager.AppSystems.SaveSystem.Save();
         }
         #endregion
     }

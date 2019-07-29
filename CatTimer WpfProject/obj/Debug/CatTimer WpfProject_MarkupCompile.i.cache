@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Project\WPF\CatTimer WpfProject\CatTimer WpfProject\App.xaml
-20-1575818475
-10-926220017
+21-686315145
+7-1607533628
 31-1746667856
 151984215308
-Xaml\Control\BlackCatControl.xaml;Xaml\Control\CheckBoxControl.xaml;Xaml\Control\ClockControl.xaml;Xaml\Control\PausedUiControl.xaml;Xaml\Control\SettingUiControl.xaml;Xaml\Control\TimingControl.xaml;Xaml\Control\ToggleControl.xaml;Xaml\Control\YellowCatControl.xaml;Xaml\Dictionary\ConverterDictionary.xaml;Xaml\Dictionary\EnglishTextDictionary.xaml;Xaml\Style\CheckBoxDictionary.xaml;Xaml\Style\NoBackgroundButtonDictionary.xaml;Xaml\Style\ToggleDictionary.xaml;Xaml\Control\ButtonControl.xaml;Xaml\Dictionary\ChineseTextDictionary.xaml;Xaml\Dictionary\FontDictionary.xaml;Xaml\Dictionary\ImageDictionary.xaml;MainWindow.xaml;Xaml\Style\ButtonDictionary.xaml;Code\Notification\NotificationWindow.xaml;
+Xaml\Control\BlackCatControl.xaml;Xaml\Control\CheckBoxControl.xaml;Xaml\Control\ClockControl.xaml;Xaml\Control\PausedUiControl.xaml;Xaml\Control\SettingUiControl.xaml;Xaml\Control\TimingControl.xaml;Xaml\Control\ToggleControl.xaml;Xaml\Control\YellowCatControl.xaml;Xaml\Dictionary\ConverterDictionary.xaml;Xaml\Dictionary\EnglishTextDictionary.xaml;Xaml\Style\CheckBoxDictionary.xaml;Xaml\Style\NoBackgroundButtonDictionary.xaml;Xaml\Style\SliderDictionary.xaml;Xaml\Style\ToggleDictionary.xaml;Xaml\Control\ButtonControl.xaml;Xaml\Dictionary\ChineseTextDictionary.xaml;Xaml\Dictionary\FontDictionary.xaml;Xaml\Dictionary\ImageDictionary.xaml;MainWindow.xaml;Xaml\Style\ButtonDictionary.xaml;Code\Notification\NotificationWindow.xaml;
 
 False
 

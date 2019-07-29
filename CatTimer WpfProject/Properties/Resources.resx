@@ -118,33 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AddOrLessNumber" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\AddOrLessNumber.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CatDown_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\CatDown-01.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CatDown_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\CatDown-02.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CatDown_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\CatDown-03.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CatUp_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\CatUp-01.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CatUp_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\CatUp-02.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="CatUp_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\CatUp-03.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DefaultButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\DefaultButtonDown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DefaultButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Asset\Audio\DefaultButtonUp.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Asset\Icon\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

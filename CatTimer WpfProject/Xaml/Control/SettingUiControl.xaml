@@ -13,6 +13,10 @@
     <!--设置界面-->
     <Canvas>
 
+        <!--背景（防止按到后面的小猫咪）-->
+        <Border Width="500" Height="500" Canvas.Top="-20" Canvas.Left="-20"
+                Background="White" Opacity="0.5" IsHitTestVisible="True"></Border>
+
         <!--关闭按钮：点击后，关闭此窗口-->
         <local:ButtonControl x:Name="CloseButtonControl"
                              ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
@@ -91,13 +95,16 @@
 
 
             <!--声音-->
-            <local:CheckBoxControl x:Name="IsHaveAudioCheckBoxControl"
-                                   Width="24" Height="24" Canvas.Left="116" Canvas.Top="35"
-                                   Background="{StaticResource CheckBox.Background.ImageBrush}"
-                                   Icon="{StaticResource CheckBox.Foreground.ImageBrush}"
-                                   IconWidth="22" IconHeight="25" Padding="2,-4,0,3"
-                                   IsChecked="{Binding ElementName=SettingUiUserControl,Path=IsHaveVoice}"
-                                   Click="IsHaveAudioCheckBoxControl_OnClick"></local:CheckBoxControl>
+            <Slider Name="VolumeSlider"
+                    Style="{DynamicResource CuteSliderStyle}" 
+                    Width="112" Height="20" Canvas.Left="95" Canvas.Top="38"
+                    Minimum="0" Maximum="100" Value="{Binding SettingData.Volume}"
+                    Orientation="Horizontal" LargeChange="1" SmallChange="5"
+                    MouseEnter="VolumeSlider_OnMouseEnter"
+                    MouseLeave="VolumeSlider_OnMouseLeave"
+                    ValueChanged="VolumeSlider_OnValueChanged"
+                    PreviewMouseDown="VolumeSlider_OnMouseLeftButtonDown"
+                    PreviewMouseUp="VolumeSlider_OnMouseLeftButtonUp"></Slider>
 
             <!--语言-->
             <local:ToggleControl x:Name="LanguageToggleControl"
@@ -146,6 +153,25 @@
             <!--制作者名单-->
             <Border Name="StaffBorder" IsHitTestVisible="True" Opacity="1"
                     Background="{StaticResource Other.Staff.ImageBrush}"></Border>
+        </Popup>
+
+        <!--音量大小-->
+        <Popup Name="VolumePopup"
+               PlacementTarget="{Binding ElementName=VolumeSlider}" Placement="Right"
+               Width="50" Height="27" HorizontalOffset="0" VerticalOffset="-3.5"
+               IsHitTestVisible="False" AllowsTransparency="True"
+               PopupAnimation="Fade">
+            <!--音量大小-->
+            <Border IsHitTestVisible="False" Opacity="1"
+                    Background="DimGray"  CornerRadius="5">
+                <TextBlock Name="VolumeTextBlock" FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                           Text="{Binding SettingData.Volume}" FontSize="20" Foreground="Gold"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                <Border.Effect>
+                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" 
+                                      Opacity="0.2" Color="#FF7A7A7A"></DropShadowEffect>
+                </Border.Effect>
+            </Border>
         </Popup>
 
     </Canvas>

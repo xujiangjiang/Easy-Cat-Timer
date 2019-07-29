@@ -17,7 +17,7 @@ namespace CatTimer_WpfProject
         /// </summary>
         public void Save()
         {
-            Properties.Settings.Default.IsHaveVoice = AppManager.AppDatas.SettingData.IsHaveVoice;//是否有声音？
+            Properties.Settings.Default.Volume = AppManager.AppDatas.SettingData.Volume;//是否有声音？
             Properties.Settings.Default.Language = (int)AppManager.AppDatas.SettingData.Language;//语言
 
             Properties.Settings.Default.Save();
@@ -29,7 +29,7 @@ namespace CatTimer_WpfProject
         /// </summary>
         public void Load()
         {
-            AppManager.AppDatas.SettingData.IsHaveVoice = Properties.Settings.Default.IsHaveVoice;
+            AppManager.AppDatas.SettingData.Volume = Properties.Settings.Default.Volume;
             AppManager.AppDatas.SettingData.Language = (LanguageType) Properties.Settings.Default.Language;
 
             //更改UI

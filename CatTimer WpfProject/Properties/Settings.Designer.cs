@@ -25,13 +25,13 @@ namespace CatTimer_WpfProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool IsHaveVoice {
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int Volume {
             get {
-                return ((bool)(this["IsHaveVoice"]));
+                return ((int)(this["Volume"]));
             }
             set {
-                this["IsHaveVoice"] = value;
+                this["Volume"] = value;
             }
         }
         

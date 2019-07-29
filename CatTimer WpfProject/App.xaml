@@ -6,7 +6,7 @@
              StartupUri="MainWindow.xaml"
              ShutdownMode="OnMainWindowClose"
              
-             Startup="App_OnStartup">
+             Startup="App_OnStartup" Exit="Application_Exit">
     
     
     <Application.Resources>
@@ -14,6 +14,15 @@
         <!--合并字典-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--字体的字典-->
+                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/FontDictionary.xaml"/>
+                <!--文字的字典-->
+                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/ChineseTextDictionary.xaml"/>
+                <!--图片的字典-->
+                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/ImageDictionary.xaml"/>
+
+
+
                 <!--转换器的字典-->
                 <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/ConverterDictionary.xaml"/>
 
@@ -23,15 +32,7 @@
                 <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Style/ToggleDictionary.xaml"/>
                 <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Style/CheckBoxDictionary.xaml"/>
                 <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Style/NoBackgroundButtonDictionary.xaml"/>
-
-
-                <!--字体的字典-->
-                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/FontDictionary.xaml"/>
-                <!--文字的字典-->
-                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/ChineseTextDictionary.xaml"/>
-                <!--图片的字典-->
-                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Dictionary/ImageDictionary.xaml"/>
-
+                <ResourceDictionary Source="/CatTimer WpfProject;component/Xaml/Style/SliderDictionary.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
