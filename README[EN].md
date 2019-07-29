@@ -18,7 +18,7 @@ After July 2, 2019, you can download the software in the Steam store.
 
 Latest version:   v1.0.1.0 (July 30, 2019)
 
-Download link：[Click to download v1.0.0.0 version](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v1.0.0.0/Easy.Cat.Timer.v1.0.0.0.zip)
+Download link：[Click to download v1.0.1.0 version](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v1.0.1.0/Easy.Cat.Timer.v1.0.1.0.zip)
 
 Steam link：https://store.steampowered.com/app/1054580/Easy_Cat_Timer/
 
