@@ -14,13 +14,31 @@ namespace CatTimer_WpfProject
     /// </summary>
     public class AudioSystem
     {
-        private MediaPlayer completeMediaPlayer = new MediaPlayer();//[完成]的音效（音频播放器：用来播放音频文件）
-        private MediaPlayer defaultButtonDownMediaPlayer = new MediaPlayer();//[普通按钮按下]的音效
-        private MediaPlayer defaultButtonUpMediaPlayer = new MediaPlayer();//[普通按钮抬起]的音效
-        private MediaPlayer addOrLessNumberMediaPlayer = new MediaPlayer();//[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
-        private MediaPlayer catUpMediaPlayer = new MediaPlayer();//[猫咪站起来]的音效
-        private MediaPlayer catDownMediaPlayer = new MediaPlayer();//[猫咪坐下]的音效
-        private MediaPlayer volumeTestMediaPlayer = new MediaPlayer();//[音量测试]的音效
+        /*
+         * 因为我们使用的是SoundPlayer类进行音频的播放。
+           因此，无法调整音量。
+           所以，我们把音频文件，进行音量调整。
+           每个音频有5个音频文件，分别是：
+            (1) 音量为100%的音频文件（文件名是Volume1.0）
+            (2) 音量为80%的音频文件（文件名是Volume0.8）
+            (3) 音量为60%的音频文件（文件名是Volume0.6）
+            (4) 音量为40%的音频文件（文件名是Volume0.4）
+            (5) 音量为20%的音频文件（文件名是Volume0.2）
+
+
+           为什么不用MediaPlayer类呢？
+            (1) 因为MediaPlayer类依赖于WMP(Windows Media Player)软件，有些没有安装WMP软件的用户会报错
+            (2) 我们曾经使用过MediaPlayer类，请参考Github中的v1.0.1.0版本，但是效果不是很好，而且经常会被垃圾回收掉
+         */
+
+
+
+        private MediaPlayer completeMediaPlayer;//[完成]的音效
+        private SoundPlayer defaultButtonDownSoundPlayer;//[普通按钮按下]的音效
+        private SoundPlayer defaultButtonUpSoundPlayer;//[普通按钮抬起]的音效
+        private SoundPlayer addOrlessNumberSoundPlayer;//[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+        private List<SoundPlayer> catUpSoundPlayers;//[猫咪站起来]的音效
+        private List<SoundPlayer> catDownSoundPlayers;//[猫咪坐下]的音效
 
 
 
@@ -30,47 +48,45 @@ namespace CatTimer_WpfProject
         /// </summary>
         public float CompleteAudioLength
         {
-            get
-            {
-                float _value = 7.0f;
-
-                try
-                {
-                    _value = (float) completeMediaPlayer.NaturalDuration.TimeSpan.TotalSeconds;
-                }
-                catch (Exception e)
-                {
-                    _value = 7.0f;
-                }
-
-                return _value;
-            }
+            get { return 7.0f; }
         }
         #endregion
 
         #region 构造方法
         public AudioSystem()
         {
+            /* 构造SoundPlayer的对象 */
+            //[完成]的音效
+            completeMediaPlayer = new MediaPlayer();
+            completeMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory+"/Asset/Audio/Complete.wav", UriKind.Absolute));
+
             //[普通按钮按下]+[普通按钮抬起]的音效
-            defaultButtonDownMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/DefaultButtonDown.wav", UriKind.Absolute));
-            defaultButtonUpMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/DefaultButtonUp.wav", UriKind.Absolute));
+            defaultButtonDownSoundPlayer = new SoundPlayer();
+            defaultButtonUpSoundPlayer = new SoundPlayer();
 
             //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
-            addOrLessNumberMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/AddOrLessNumber.wav", UriKind.Absolute));
+            addOrlessNumberSoundPlayer = new SoundPlayer();
 
-            //[猫咪站起来]+[猫咪坐下]的音效
-            catUpMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/CatUp.wav", UriKind.Absolute));
-            catDownMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/CatDown.wav", UriKind.Absolute));
+            //[猫咪站起来]的音效
+            catUpSoundPlayers = new List<SoundPlayer>();
+            catUpSoundPlayers.Add(new SoundPlayer());
+            catUpSoundPlayers.Add(new SoundPlayer());
+            catUpSoundPlayers.Add(new SoundPlayer());
 
-            //[音量测试]的音效
-            volumeTestMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/VolumeTest.wav", UriKind.Absolute));
+            //[猫咪坐下]的音效
+            catDownSoundPlayers= new List<SoundPlayer>();
+            catDownSoundPlayers.Add(new SoundPlayer());
+            catDownSoundPlayers.Add(new SoundPlayer());
+            catDownSoundPlayers.Add(new SoundPlayer());
 
-            //[完成]的音效
-            completeMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/Complete.wav", UriKind.Absolute));
+
+            /* 根据音量，选择对应的音频 */
+            SetSoundPlayer(AppManager.AppDatas.SettingData.Volume);
+
         }
         #endregion
 
-        #region 公开方法 -[播放+停止 音频]
+        #region 公开方法-[播放+停止 音效]
         /// <summary>
         /// 播放音效
         /// </summary>
@@ -81,48 +97,37 @@ namespace CatTimer_WpfProject
             if (AppManager.AppDatas.SettingData.Volume <= 0)return;
 
 
-            //容器：要播放的音频控件？
-            MediaPlayer _currentMediaPlayer = null;
-
-            //判断要播放哪个音频控件？
+            //播放声音
             switch (_audioType)
             {
                 case AudioType.Complete:
-                    _currentMediaPlayer = completeMediaPlayer;
+                    completeMediaPlayer.Volume = AppManager.AppDatas.SettingData.Volume / 100.0f;
+                    completeMediaPlayer.Open(new Uri(System.Environment.CurrentDirectory + "/Asset/Audio/Complete/Complete(Volume1.0).wav", UriKind.Absolute));
+                    completeMediaPlayer.Stop();
+                    completeMediaPlayer.Play();
                     break;
 
                 case AudioType.CatUp:
-                    catDownMediaPlayer.Stop();
-                    _currentMediaPlayer = catUpMediaPlayer;
+                    int _catUpIndex = Tools.GetRandom(0, catUpSoundPlayers.Count);//随机一个音频播放
+                    catUpSoundPlayers[_catUpIndex].Play();
                     break;
                 case AudioType.CatDown:
-                    catUpMediaPlayer.Stop();
-                    _currentMediaPlayer = catDownMediaPlayer;
+                    int _catDownIndex = Tools.GetRandom(0, catDownSoundPlayers.Count);//随机一个音频播放
+                    catDownSoundPlayers[_catDownIndex].Play();
                     break;
 
                 case AudioType.DefaultButtonDown:
-                    _currentMediaPlayer = defaultButtonDownMediaPlayer;
+                    defaultButtonDownSoundPlayer.Play();
                     break;
                 case AudioType.DefaultButtonUp:
-                    _currentMediaPlayer = defaultButtonUpMediaPlayer;
+                    defaultButtonUpSoundPlayer.Play();
                     break;
 
-                case AudioType.AddOrlessNumber:
-                    _currentMediaPlayer = addOrLessNumberMediaPlayer;
-                    break;
-                case AudioType.VolumeTest:
-                    _currentMediaPlayer = volumeTestMediaPlayer;
+                case AudioType.AddOrlessNumberSoundPlayer:
+                    addOrlessNumberSoundPlayer.Play();
                     break;
             }
 
-
-            //播放声音
-            if (_currentMediaPlayer != null)
-            {
-                _currentMediaPlayer.Volume = AppManager.AppDatas.SettingData.Volume / 100.0f;//设置音量
-                _currentMediaPlayer.Stop();//停止
-                _currentMediaPlayer.Play();//播放
-            }
         }
 
         /// <summary>
@@ -141,14 +146,152 @@ namespace CatTimer_WpfProject
         }
         #endregion
 
-        #region 公开方法 -[其他]
+        #region 公开方法-[事件]
         /// <summary>
-        /// 当[音量]发生改变时，触发此方法
+        /// 当音量更改时，触发此方法
         /// </summary>
-        public void OnVolumeChange(int _newVolume)
+        /// <param name="_volume">音量大小(0-100)</param>
+        public void OnVolumeChange(int _volume)
         {
-            //修改[音频播放器]的音量
-            completeMediaPlayer.Volume = _newVolume/100.0f;
+            SetSoundPlayer(_volume);
+        }
+        #endregion
+
+        #region 私有方法
+        /// <summary>
+        /// 根据音量，设置
+        /// </summary>
+        /// <param name="volume"></param>
+        private void SetSoundPlayer(int _volume)
+        {
+            /* 设置[音效] */
+            switch (_volume)
+            {
+                /* 如果音量为100 */
+                case 100:
+                    //[普通按钮按下]+[普通按钮抬起]的音效
+                    defaultButtonDownSoundPlayer.Stream = Properties.Resources.DefaultButtonDown_Volume1_0_;
+                    defaultButtonUpSoundPlayer.Stream = Properties.Resources.DefaultButtonUp_Volume1_0_;
+
+                    //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+                    addOrlessNumberSoundPlayer.Stream = Properties.Resources.AddOrLessNumber_Volume1_0_;
+
+                    //[猫咪站起来]的音效
+                    catUpSoundPlayers[0].Stream = Properties.Resources.CatUp_01_Volume1_0_;
+                    catUpSoundPlayers[1].Stream = Properties.Resources.CatUp_02_Volume1_0_;
+                    catUpSoundPlayers[2].Stream = Properties.Resources.CatUp_03_Volume1_0_;
+
+                    //[猫咪坐下]的音效
+                    catDownSoundPlayers[0].Stream = Properties.Resources.CatDown_01_Volume1_0_;
+                    catDownSoundPlayers[1].Stream = Properties.Resources.CatDown_02_Volume1_0_;
+                    catDownSoundPlayers[2].Stream = Properties.Resources.CatDown_03_Volume1_0_;
+                    break;
+
+
+                /* 如果音量为80 */
+                case 80:
+                    //[普通按钮按下]+[普通按钮抬起]的音效
+                    defaultButtonDownSoundPlayer.Stream = Properties.Resources.DefaultButtonDown_Volume0_8_;
+                    defaultButtonUpSoundPlayer.Stream = Properties.Resources.DefaultButtonUp_Volume0_8_;
+
+                    //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+                    addOrlessNumberSoundPlayer.Stream = Properties.Resources.AddOrLessNumber_Volume0_8_;
+
+                    //[猫咪站起来]的音效
+                    catUpSoundPlayers[0].Stream = Properties.Resources.CatUp_01_Volume0_8_;
+                    catUpSoundPlayers[1].Stream = Properties.Resources.CatUp_02_Volume0_8_;
+                    catUpSoundPlayers[2].Stream = Properties.Resources.CatUp_03_Volume0_8_;
+
+                    //[猫咪坐下]的音效
+                    catDownSoundPlayers[0].Stream = Properties.Resources.CatDown_01_Volume0_8_;
+                    catDownSoundPlayers[1].Stream = Properties.Resources.CatDown_02_Volume0_8_;
+                    catDownSoundPlayers[2].Stream = Properties.Resources.CatDown_03_Volume0_8_;
+                    break;
+
+
+                /* 如果音量为60 */
+                case 60:
+                    //[普通按钮按下]+[普通按钮抬起]的音效
+                    defaultButtonDownSoundPlayer.Stream = Properties.Resources.DefaultButtonDown_Volume0_6_;
+                    defaultButtonUpSoundPlayer.Stream = Properties.Resources.DefaultButtonUp_Volume0_6_;
+
+                    //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+                    addOrlessNumberSoundPlayer.Stream = Properties.Resources.AddOrLessNumber_Volume0_6_;
+
+                    //[猫咪站起来]的音效
+                    catUpSoundPlayers[0].Stream = Properties.Resources.CatUp_01_Volume0_6_;
+                    catUpSoundPlayers[1].Stream = Properties.Resources.CatUp_02_Volume0_6_;
+                    catUpSoundPlayers[2].Stream = Properties.Resources.CatUp_03_Volume0_6_;
+
+                    //[猫咪坐下]的音效
+                    catDownSoundPlayers[0].Stream = Properties.Resources.CatDown_01_Volume0_6_;
+                    catDownSoundPlayers[1].Stream = Properties.Resources.CatDown_02_Volume0_6_;
+                    catDownSoundPlayers[2].Stream = Properties.Resources.CatDown_03_Volume0_6_;
+                    break;
+
+
+                /* 如果音量为40 */
+                case 40:
+                    //[普通按钮按下]+[普通按钮抬起]的音效
+                    defaultButtonDownSoundPlayer.Stream = Properties.Resources.DefaultButtonDown_Volume0_4_;
+                    defaultButtonUpSoundPlayer.Stream = Properties.Resources.DefaultButtonUp_Volume0_4_;
+
+                    //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+                    addOrlessNumberSoundPlayer.Stream = Properties.Resources.AddOrLessNumber_Volume0_4_;
+
+                    //[猫咪站起来]的音效
+                    catUpSoundPlayers[0].Stream = Properties.Resources.CatUp_01_Volume0_4_;
+                    catUpSoundPlayers[1].Stream = Properties.Resources.CatUp_02_Volume0_4_;
+                    catUpSoundPlayers[2].Stream = Properties.Resources.CatUp_03_Volume0_4_;
+
+                    //[猫咪坐下]的音效
+                    catDownSoundPlayers[0].Stream = Properties.Resources.CatDown_01_Volume0_4_;
+                    catDownSoundPlayers[1].Stream = Properties.Resources.CatDown_02_Volume0_4_;
+                    catDownSoundPlayers[2].Stream = Properties.Resources.CatDown_03_Volume0_4_;
+                    break;
+
+
+                /* 如果音量为20 */
+                case 20:
+                    //[普通按钮按下]+[普通按钮抬起]的音效
+                    defaultButtonDownSoundPlayer.Stream = Properties.Resources.DefaultButtonDown_Volume0_2_;
+                    defaultButtonUpSoundPlayer.Stream = Properties.Resources.DefaultButtonUp_Volume0_2_;
+
+                    //[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
+                    addOrlessNumberSoundPlayer.Stream = Properties.Resources.AddOrLessNumber_Volume0_2_;
+
+                    //[猫咪站起来]的音效
+                    catUpSoundPlayers[0].Stream = Properties.Resources.CatUp_01_Volume0_2_;
+                    catUpSoundPlayers[1].Stream = Properties.Resources.CatUp_02_Volume0_2_;
+                    catUpSoundPlayers[2].Stream = Properties.Resources.CatUp_03_Volume0_2_;
+
+                    //[猫咪坐下]的音效
+                    catDownSoundPlayers[0].Stream = Properties.Resources.CatDown_01_Volume0_2_;
+                    catDownSoundPlayers[1].Stream = Properties.Resources.CatDown_02_Volume0_2_;
+                    catDownSoundPlayers[2].Stream = Properties.Resources.CatDown_03_Volume0_2_;
+                    break;
+            }
+
+
+
+
+            /* 设置[完成]的音乐 */
+            completeMediaPlayer.Volume = _volume / 100.0f;
+
+
+
+
+            /* 加载音频（提前加载音频）*/
+            defaultButtonDownSoundPlayer.Load();
+            defaultButtonUpSoundPlayer.Load();
+            for (int i = 0; i < catUpSoundPlayers.Count; i++)
+            {
+                catUpSoundPlayers[i].Load();
+            }
+            for (int i = 0; i < catDownSoundPlayers.Count; i++)
+            {
+                catDownSoundPlayers[i].Load();
+            }
         }
         #endregion
     }

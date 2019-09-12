@@ -13,10 +13,6 @@
     <!--设置界面-->
     <Canvas>
 
-        <!--背景（防止按到后面的小猫咪）-->
-        <Border Width="500" Height="500" Canvas.Top="-20" Canvas.Left="-20"
-                Background="White" Opacity="0.5" IsHitTestVisible="True"></Border>
-
         <!--关闭按钮：点击后，关闭此窗口-->
         <local:ButtonControl x:Name="CloseButtonControl"
                              ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
@@ -99,12 +95,11 @@
                     Style="{DynamicResource CuteSliderStyle}" 
                     Width="112" Height="20" Canvas.Left="95" Canvas.Top="38"
                     Minimum="0" Maximum="100" Value="{Binding SettingData.Volume}"
-                    Orientation="Horizontal" LargeChange="1" SmallChange="5"
+                    Orientation="Horizontal" LargeChange="20" SmallChange="20"
+                    TickFrequency="20" IsSnapToTickEnabled="True"
                     MouseEnter="VolumeSlider_OnMouseEnter"
                     MouseLeave="VolumeSlider_OnMouseLeave"
-                    ValueChanged="VolumeSlider_OnValueChanged"
-                    PreviewMouseDown="VolumeSlider_OnMouseLeftButtonDown"
-                    PreviewMouseUp="VolumeSlider_OnMouseLeftButtonUp"></Slider>
+                    ValueChanged="VolumeSlider_OnValueChanged"></Slider>
 
             <!--语言-->
             <local:ToggleControl x:Name="LanguageToggleControl"

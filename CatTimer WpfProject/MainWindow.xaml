@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatTimer_WpfProject"
         mc:Ignorable="d"
-        Title="Easy Cat Timer" Width="434" Height="384" ResizeMode="NoResize"
+        Title="Cat Timer v0.0.1" Width="434" Height="384" ResizeMode="NoResize"
         
         AllowsTransparency="True" WindowStyle="None" Background="Transparent"
         

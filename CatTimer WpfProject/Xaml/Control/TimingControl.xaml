@@ -115,8 +115,8 @@
                                  IconWidth="20" IconHeight="20" Canvas.Top="36" Canvas.Left="270"
                                  Cursor="Hand"
                                  Click="SecondUpButton_Click"
-                                 PreviewMouseLeftButtonDown="SecondDownButton_OnPreviewMouseLeftButtonDown"
-                                 PreviewMouseLeftButtonUp="SecondDownButton_OnPreviewMouseLeftButtonUp"/>
+                                 PreviewMouseLeftButtonDown="SecondUpButton_OnPreviewMouseLeftButtonDown"
+                                 PreviewMouseLeftButtonUp="SecondUpButton_OnPreviewMouseLeftButtonUp"/>
             <local:ButtonControl x:Name="SecondDownButton"
                                  ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
                                  Icon="{StaticResource UpDownButton.Down.ImageBrush}"

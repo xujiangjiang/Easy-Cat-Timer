@@ -356,27 +356,6 @@
     <Resource Include="Asset\Image\Cat\NotificationCat.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Asset\Audio\CatDown.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Asset\Audio\Complete.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Asset\Audio\DefaultButtonUp.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Asset\Audio\DefaultButtonDown.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Asset\Audio\VolumeTest.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Asset\Audio\CatUp.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Asset\Audio\AddOrLessNumber.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Asset\Image\Other\Staff.png" />
     <Resource Include="Asset\Icon\Icon.ico" />
   </ItemGroup>
@@ -391,6 +370,70 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asset\Audio\AddOrLessNumber\AddOrLessNumber%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\AddOrLessNumber\AddOrLessNumber%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\AddOrLessNumber\AddOrLessNumber%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\AddOrLessNumber\AddOrLessNumber%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\AddOrLessNumber\AddOrLessNumber%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\CatDown-01\CatDown-01%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\CatDown-01\CatDown-01%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\CatDown-01\CatDown-01%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\CatDown-01\CatDown-01%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\CatDown-01\CatDown-01%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\CatDown-02\CatDown-02%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\CatDown-02\CatDown-02%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\CatDown-02\CatDown-02%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\CatDown-02\CatDown-02%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\CatDown-02\CatDown-02%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\CatDown-03\CatDown-03%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\CatDown-03\CatDown-03%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\CatDown-03\CatDown-03%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\CatDown-03\CatDown-03%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\CatDown-03\CatDown-03%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\CatUp-01\CatUp-01%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\CatUp-01\CatUp-01%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\CatUp-01\CatUp-01%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\CatUp-01\CatUp-01%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\CatUp-01\CatUp-01%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\CatUp-02\CatUp-02%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\CatUp-02\CatUp-02%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\CatUp-02\CatUp-02%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\CatUp-02\CatUp-02%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\CatUp-02\CatUp-02%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\CatUp-03\CatUp-03%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\CatUp-03\CatUp-03%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\CatUp-03\CatUp-03%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\CatUp-03\CatUp-03%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\CatUp-03\CatUp-03%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\Complete\Complete%28Volume0.2%29.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Audio\Complete\Complete%28Volume0.4%29.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Audio\Complete\Complete%28Volume0.6%29.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Audio\Complete\Complete%28Volume0.8%29.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Audio\Complete\Complete%28Volume1.0%29.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Asset\Audio\DefaultButtonDown\DefaultButtonDown%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonDown\DefaultButtonDown%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonDown\DefaultButtonDown%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonDown\DefaultButtonDown%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonDown\DefaultButtonDown%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonUp\DefaultButtonUp%28Volume0.2%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonUp\DefaultButtonUp%28Volume0.4%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonUp\DefaultButtonUp%28Volume0.6%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonUp\DefaultButtonUp%28Volume0.8%29.wav" />
+    <Content Include="Asset\Audio\DefaultButtonUp\DefaultButtonUp%28Volume1.0%29.wav" />
+    <Content Include="Asset\Audio\VolumeTest\VolumeTest%28Volume1.0%29.wav" />
+    <Resource Include="Asset\Audio\关于音频.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

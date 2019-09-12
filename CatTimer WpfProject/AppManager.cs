@@ -24,10 +24,10 @@ namespace CatTimer_WpfProject
         private static MainWindow mainWindow;//窗口的逻辑
 
         /* 数据 */
-        private static AppDatas appDatas = new AppDatas();//App中的所有数据
+        private static AppDatas appDatas;//App中的所有数据
 
         /* 子系统 */
-        private static AppSystems appSystems = new AppSystems();//App中的所有系统
+        private static AppSystems appSystems;//App中的所有系统
 
 
 
@@ -75,6 +75,9 @@ namespace CatTimer_WpfProject
         /// </summary>
         public static void Awake()
         {
+            appDatas = new AppDatas();
+            appSystems = new AppSystems();
+
             //读取读取数据
             AppSystems.SaveSystem.Load();
         }

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:CatTimer_WpfProject"
         mc:Ignorable="d"
 
-        Title="Time Is Up!" 
+        Title="NotificationWindow" 
         Height="141" Width="490"
         ResizeMode="NoResize" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent"

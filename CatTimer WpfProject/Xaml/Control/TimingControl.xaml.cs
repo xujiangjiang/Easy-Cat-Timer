@@ -303,7 +303,7 @@ namespace CatTimer_WpfProject
             isTimerWorking = true;//修改标识符
 
             AddOrLessMinute(1);//分钟数+1
-            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumber);//播放音效
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
             addMinuteTimer.Interval = cdTime;//修改间隔时间
         }
         //当玩家一直按住[减少分钟数]的按钮时，每隔0.3秒，减少1点分钟数
@@ -312,7 +312,7 @@ namespace CatTimer_WpfProject
             isTimerWorking = true;//修改标识符
 
             AddOrLessMinute(-1);//分钟数-1
-            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumber);//播放音效
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
             lessMinuteTimer.Interval = cdTime;//修改间隔时间
         }
 
@@ -323,7 +323,7 @@ namespace CatTimer_WpfProject
             isTimerWorking = true;//修改标识符
 
             AddOrLessSecond(1);//秒钟数+1
-            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumber);//播放音效
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
             addSecondTimer.Interval = cdTime;//修改间隔时间
         }
         //当玩家一直按住[减少秒钟数]的按钮时，每隔0.3秒，减少1点秒钟数
@@ -332,7 +332,7 @@ namespace CatTimer_WpfProject
             isTimerWorking = true;//修改标识符
 
             AddOrLessSecond(-1);//秒钟数-1
-            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumber);//播放音效
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.AddOrlessNumberSoundPlayer);//播放音效
             lessSecondTimer.Interval = cdTime;//修改间隔时间
         }
         #endregion
@@ -561,21 +561,27 @@ namespace CatTimer_WpfProject
 
             if (_textBox!=null)
             {
-                //如果是[分钟]
+                //如果是[分钟] 的文本框
                 if (_textBox.Name == "MinuteTextBlock")
                 {
-                    AddOrLessMinute(e.Delta/100);
+                    AddOrLessMinute(e.Delta/100);//e.Delta代表鼠标滚轮的滚动量
                 }
 
-                //如果是[秒钟]
-                else if (_textBox.Name == "SecondTextBlock")
+                //如果是[秒钟] 的文本框
+                else if(_textBox.Name == "SecondTextBlock")
                 {
                     AddOrLessSecond(e.Delta / 100);
                 }
             }
 
+            //播放音效
             AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonDown);
 
+
+
+
+
+            //禁用鼠标滚轮（终止鼠标滚轮事件）
             e.Handled = true;
         }
         #endregion

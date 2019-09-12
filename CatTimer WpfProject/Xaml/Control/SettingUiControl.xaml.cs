@@ -136,19 +136,6 @@ namespace CatTimer_WpfProject
         //当[音量滑动条]的值 改变时
         private void VolumeSlider_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            AppManager.AppSystems.AudioSystem.OnVolumeChange(AppManager.AppDatas.SettingData.Volume);
-        }
-
-        //当鼠标在[音量滑动条]上按下时
-        private void VolumeSlider_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonDown);//播放音效
-        }
-
-        //当鼠标在[音量滑动条]上抬起时
-        private void VolumeSlider_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.VolumeTest);//播放音效
         }
         #endregion
 

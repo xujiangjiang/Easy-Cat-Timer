@@ -33,7 +33,6 @@
         CatDown,//猫咪坐下
         DefaultButtonDown,//普通按钮按下
         DefaultButtonUp,//普通按钮抬起
-        AddOrlessNumber,//[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
-        VolumeTest,//[音量测试]的音效
+        AddOrlessNumberSoundPlayer//[增加或减少][分钟数或者秒钟数]的音效（设定时间的界面）
     }
 }

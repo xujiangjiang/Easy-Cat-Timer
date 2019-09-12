@@ -61,6 +61,456 @@ namespace CatTimer_WpfProject.Properties {
         }
         
         /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AddOrLessNumber_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("AddOrLessNumber_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AddOrLessNumber_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("AddOrLessNumber_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AddOrLessNumber_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("AddOrLessNumber_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AddOrLessNumber_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("AddOrLessNumber_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AddOrLessNumber_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("AddOrLessNumber_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_01_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("CatDown_01_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_01_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("CatDown_01_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_01_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("CatDown_01_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_01_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("CatDown_01_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_01_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("CatDown_01_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_02_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("CatDown_02_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_02_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("CatDown_02_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_02_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("CatDown_02_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_02_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("CatDown_02_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_02_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("CatDown_02_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_03_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("CatDown_03_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_03_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("CatDown_03_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_03_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("CatDown_03_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_03_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("CatDown_03_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatDown_03_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("CatDown_03_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_01_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("CatUp_01_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_01_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("CatUp_01_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_01_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("CatUp_01_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_01_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("CatUp_01_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_01_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("CatUp_01_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_02_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("CatUp_02_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_02_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("CatUp_02_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_02_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("CatUp_02_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_02_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("CatUp_02_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_02_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("CatUp_02_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_03_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("CatUp_03_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_03_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("CatUp_03_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_03_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("CatUp_03_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_03_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("CatUp_03_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream CatUp_03_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("CatUp_03_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Complete_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("Complete_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Complete_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("Complete_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Complete_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("Complete_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Complete_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("Complete_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Complete_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("Complete_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonDown_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonDown_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonDown_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonDown_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonDown_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonDown_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonDown_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonDown_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonDown_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonDown_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonUp_Volume0_2_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonUp_Volume0_2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonUp_Volume0_4_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonUp_Volume0_4_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonUp_Volume0_6_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonUp_Volume0_6_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonUp_Volume0_8_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonUp_Volume0_8_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DefaultButtonUp_Volume1_0_ {
+            get {
+                return ResourceManager.GetStream("DefaultButtonUp_Volume1_0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Icon Icon {

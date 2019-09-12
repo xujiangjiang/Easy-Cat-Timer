@@ -118,6 +118,156 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AddOrLessNumber_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\addorlessnumber\addorlessnumber(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddOrLessNumber_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\addorlessnumber\addorlessnumber(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddOrLessNumber_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\addorlessnumber\addorlessnumber(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddOrLessNumber_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\addorlessnumber\addorlessnumber(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AddOrLessNumber_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\addorlessnumber\addorlessnumber(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_01_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-01\catdown-01(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_01_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-01\catdown-01(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_01_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-01\catdown-01(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_01_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-01\catdown-01(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_01_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-01\catdown-01(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_02_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-02\catdown-02(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_02_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-02\catdown-02(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_02_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-02\catdown-02(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_02_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-02\catdown-02(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_02_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-02\catdown-02(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_03_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-03\catdown-03(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_03_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-03\catdown-03(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_03_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-03\catdown-03(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_03_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-03\catdown-03(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatDown_03_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catdown-03\catdown-03(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_01_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-01\catup-01(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_01_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-01\catup-01(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_01_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-01\catup-01(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_01_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-01\catup-01(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_01_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-01\catup-01(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_02_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-02\catup-02(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_02_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-02\catup-02(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_02_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-02\catup-02(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_02_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-02\catup-02(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_02_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-02\catup-02(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_03_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-03\catup-03(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_03_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-03\catup-03(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_03_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-03\catup-03(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_03_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-03\catup-03(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CatUp_03_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\catup-03\catup-03(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Complete_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\complete\complete(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Complete_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\complete\complete(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Complete_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\complete\complete(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Complete_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\complete\complete(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Complete_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\complete\complete(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonDown_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttondown\defaultbuttondown(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonDown_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttondown\defaultbuttondown(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonDown_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttondown\defaultbuttondown(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonDown_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttondown\defaultbuttondown(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonDown_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttondown\defaultbuttondown(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonUp_Volume0_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttonup\defaultbuttonup(volume0.2).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonUp_Volume0_4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttonup\defaultbuttonup(volume0.4).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonUp_Volume0_6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttonup\defaultbuttonup(volume0.6).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonUp_Volume0_8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttonup\defaultbuttonup(volume0.8).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DefaultButtonUp_Volume1_0_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\asset\audio\defaultbuttonup\defaultbuttonup(volume1.0).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Asset\Icon\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

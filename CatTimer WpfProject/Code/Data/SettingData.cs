@@ -30,6 +30,7 @@ namespace CatTimer_WpfProject
             {
                 volume = value;
                 PropertyChange("Volume");//更新UI
+                AppManager.AppSystems.AudioSystem.OnVolumeChange(volume);//触发[音量更改]的事件
             }
         }
 
