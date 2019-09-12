@@ -18,7 +18,7 @@ After July 2, 2019, you can download the software in the Steam store.
 
 Latest version:   v1.0.1.0 (July 30, 2019)
 
-Download link：[Click to download v1.0.1.0 version](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v1.0.1.0/Easy.Cat.Timer.v1.0.1.0.zip)
+Download link：[Click to download v1.0.1.1 version](https://github.com/xujiangjiang/Easy-Cat-Timer/releases/download/v1.0.1.1/Easy.Cat.Timer.v1.0.1.1.zip)
 
 Steam link：https://store.steampowered.com/app/1054580/Easy_Cat_Timer/
 
@@ -115,6 +115,11 @@ Easy Cat Timer is a WPF application written in C# (.NET Framework) that runs on 
   2. Optimization: you can adjust the volume——*Thanks：[TBR] Flaming、乐乐*
 
 <br/>
+
+**v1.0.1.1（2019.09.13）：**
+
+1. Fix: When you press and hold the up arrow of "Second", the number of seconds will decrease——Thanks：UEMion
+2. Optimization: Redo the "volume" function (using the SoundPlayer class)——Thanks：amirrammari
 
 
 
